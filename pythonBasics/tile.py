@@ -1,3 +1,5 @@
+import random
+
 class Tile:
 
     def __init__(self): # 0 == False == no connection
@@ -5,7 +7,7 @@ class Tile:
         self.down = False
         self.left = False
         self.right = False
-        self.uncovered = False
+        self.uncovered = False # False = tile has not been visited yet
 
     def __str__(self):
         if self.uncovered:
@@ -16,9 +18,19 @@ class Tile:
     def uncover(self):
         self.uncovered = True
 
-    def make_crossroads(self):
-        self.up = True
-        self.down = True
-        self.left = True
-        self.right = True
+    def generate(self,directions):
+        print "called generate on ", directions
+        for i in range(4):
+            if directions[i] == "None":
+                print directions[i]
+                directions[i] = (random.randint(1,3)<3)
+                print directions[i]
+        self.up = directions[0]
+        self.down = directions[1]
+        self.left = directions[2]
+        self.right = directions[3]
+        print "up= ", directions[0]
+        print "down= ", directions[1]
+        print "left= ", directions[2]
+        print "right= ", directions[3]
         self.uncover()
