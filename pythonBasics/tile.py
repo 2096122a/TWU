@@ -16,4 +16,9 @@ class Tile:
     def uncover(self):
         self.uncovered = True
 
-    
+    def make_crossroads(self):
+        self.up = True
+        self.down = True
+        self.left = True
+        self.right = True
+        self.uncover()
