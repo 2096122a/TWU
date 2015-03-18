@@ -1,0 +1,14 @@
+body {background-image:url('images/dark-zombie_00223197.jpg');color:white;}
+@font-face {
+	font-family: blood;
+	src: url(test.woff);
+}
+P {color:white;}
+H1 {color:red; font-size:300%; font-family: blood; text-align:center}
+H2 {color:red; font-size:500%; font-family: blood; text-align:center}
+H3 {color:red; font-size:500%; font-family: blood; text-align:center}
+H4 {color:red; font-size:300%; font-family: blood; text-align:left}
+H5 {color:red; font-size:300%; font-family: blood; text-align:right}
+
+			
+
