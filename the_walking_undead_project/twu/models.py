@@ -13,3 +13,12 @@ class UserProfile(models.Model):
     def __unicode__(self):
         return self.user.username
 # Create your models here.
+
+class Score(models.Model):
+    player = models.ForeignKey(UserProfile)
+    score = models.IntegerField(default=0)
+    timestamp = models.DateTimeField()
+
+    def _unicode_(self):
+        return self.score
+
