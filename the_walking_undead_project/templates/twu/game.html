@@ -1,0 +1,47 @@
+{% extends 'twu/base.html' %}
+{% load staticfiles %}
+{% block title %}Index{% endblock %}
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-left">
+<li><a href="{% url 'index' %}"><h4>How To Play</h4></a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+{% if user.is_authenticated %}
+<li><a href="{% url 'index' %}?next=/rango/"><h5>Logout</h5></a></li>
+{% else %}
+<li><a href="{% url 'index' %}"><h5>Log in /Register Here</h5></a></li>
+{% endif %}
+</ul>
+</div>
+{% block side_blockl %}
+<br><br>
+<img style="width: 50%; height: 20%;" alt="" src="{% static 'images/Heart_corazon.svg.png' %}" ><img style="width: 100px; height: 100px;" alt="" src="{% static 'images/45_acp_rn_silver_bullet.jpg' %}" ><br><br>&lt;&lt;Life value&gt;&gt;&lt;&lt;Bullet value&gt;&gt;
+<br><br><br><br><br>
+<img style="width: 100%; height: 15%;" alt="" src="{% static 'images/baseballbatL.jpg' %}" ><br>&lt;&lt;melee weapon title and hit value&gt;&gt;
+<br><br><br><br><br>
+<img style="width: 120%; height: 10%;" alt="" src="{% static 'images/2357234-shotgun_img.png' %}" ><br><br><br><br><br>&lt;&lt;Firearm title and hit value&gt;&gt;<br>
+{% endblock %}
+{% block side_block %}
+<br><br>
+<img style="width: 100%; height: 25%;" alt="" src=" {% static 'images/mzi.loltlnrb.png' %} "><br>&lt;&lt;To be updated when rolled&gt;&gt;<br><br><br><br>
+<img style="width: 25%; height: 15%;" alt="" src="{% static 'images/spacer.png' %}">
+<img style="width: 25%; height: 10%;"  alt="" src="{% static 'images/up_arrow.png' %}"><br>
+<img style="width: 25%; height: 10%;"  alt="" src="{% static 'images/left_arrow.png' %} ">
+<img style="width: 25%; height: 10%;"  alt="" src="{% static 'images/spacer.png' %} ">
+<img style="width: 25%; height: 10%;"  alt="" src="{% static 'images/right_arrow.png' %} ">
+<img style="width: 25%; height: 15%;"  alt="" src="{% static 'images/spacer.png' %} ">
+<img style="width: 25%; height: 10%;"  alt="" src="{% static 'images/down_arrow.png' %} ">
+<br><br><br><br><br>
+&lt;&lt;SCORE COUNTER&gt;&gt;
+{% endblock %}
+
+{% block body_block %}
+<img style="width: 65%; height: 65%;" alt="" src="{% static 'images/sample_map.png' %} "><br>
+&lt;&lt;in game text feedback box&gt;&gt; <br>
+You pick up 2 Health Packs and 1 Bullet<br>
+You find a Shotgun, aka your "Boom Stick"<br>
+You see 3 Zombies
+<br><br>
+
+{% endblock %}
+</html>
