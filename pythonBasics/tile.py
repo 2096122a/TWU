@@ -21,10 +21,8 @@ class Tile:
     def generate(self,directions):
         print "called generate on ", directions
         for i in range(4):
-            if directions[i] == "None":
-                print directions[i]
+            if directions[i] == None:
                 directions[i] = (random.randint(1,3)<3)
-                print directions[i]
         self.up = directions[0]
         self.down = directions[1]
         self.left = directions[2]

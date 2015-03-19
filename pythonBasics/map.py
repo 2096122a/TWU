@@ -57,19 +57,19 @@ class Map:
 
     def generate(self):
         tiles = self.get_neighbours()
-        up1 = "None"
-        down1 = "None"
-        right1 = "None"
-        left1 = "None"
+        up = None
+        down = None
+        right = None
+        left = None
         if tiles[0].uncovered:
-            up1 = tiles[0].down
+            up = tiles[0].down
         if tiles[1].uncovered:
-            down1 = tiles[1].up
+            down = tiles[1].up
         if tiles[2].uncovered:
-            left1 = tiles[2].right
+            left = tiles[2].right
         if tiles[3].uncovered:
-            right1 = tiles[3].left
-        directions = [up1,down1,left1,right1]
+            right = tiles[3].left
+        directions = [up,down,left,right]
         self.get_current_tile().generate(directions)
         
 
