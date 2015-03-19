@@ -2,5 +2,5 @@ from django.conf.urls import patterns, url
 from twu import views
 
 urlpatterns = patterns('',
-        url(r'^twu/', include('twu.urls')),
+       url(r'^$', views.index, name='index')
         )

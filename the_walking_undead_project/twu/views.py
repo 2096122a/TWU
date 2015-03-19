@@ -2,4 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Rango says hey there world!")
+# can be used to score if user registered/logged in
+    context_dict = {}
+    #response = render(request, 'twu/index.html', context_dict)
+    return render(request, 'twu/index.html', context_dict)
