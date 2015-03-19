@@ -31,4 +31,6 @@ class Tile:
         print "down= ", directions[1]
         print "left= ", directions[2]
         print "right= ", directions[3]
+        self.zombies = (random.randint(1,2))
         self.uncover()
+
