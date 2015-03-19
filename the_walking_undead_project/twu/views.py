@@ -4,6 +4,7 @@ from twu.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 
 # Use the login_required() decorator to ensure only those logged in can access the view.
 @login_required
