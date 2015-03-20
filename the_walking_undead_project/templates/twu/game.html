@@ -1,8 +1,14 @@
 {% extends 'twu/base.html' %}
 {% load staticfiles %}
+
 {% block title %}Index{% endblock %}
 {% block top_block_left %}
-<li><a href="{% url 'index' %}"><h4>How To Play</h4></a></li>
+<script>
+function myFunction() {
+    window.open("{% url 'howto3' %}", "_blank", "resizable=yes");
+}
+</script>
+<button onclick="myFunction()"><h4>How To Play</h4></button>
 {% endblock %}
 {% block top_block_right %}
 {% if user.is_authenticated %}
@@ -39,7 +45,9 @@
 {% if tiles %}
 	{% for row in tiles %}
 		{% for tile in row %}
+		{% if tile != '0' %}
 			<img alt="{{ tile }}" src="{% static '{{ tile }}.png' %}">
+		{% endif %}
 		{% endfor %}
 		<br>
 	{% endfor %}

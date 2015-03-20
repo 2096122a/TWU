@@ -1,17 +1,7 @@
 {% extends 'twu/base.html' %}
 {% load staticfiles %}
 {% block title %}Index{% endblock %}
-{% block top_block_right %}
-<div class="navbar-collapse collapse">
-{% if user.is_authenticated %}
-<li><a href="{% url 'auth_logout' %}?next=/twu/"><h5>{{ user.username }} Logout</h5></a></li>
-{% else %}
-<li><a href="{% url 'auth_login' %}"><h5>Log in</h5></a></li>
-<li><a href="{% url 'registration_register' %}"><h5>Register Here</h5></a></li>
 
-{% endif %}
-</div>
-{% endblock %}
 
 {% block body_block %}
 <h3><br>
