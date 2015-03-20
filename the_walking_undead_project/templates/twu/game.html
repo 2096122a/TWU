@@ -46,7 +46,7 @@ function howToPlay() {
 	{% for row in tiles %}
 		{% for tile in row %}
 		{% if tile != '0' %}
-			<img alt="{{ tile }}" src="{% static '{{ tile }}.png' %}">
+			<img style="width: 15%; height: 10%;"  alt="" src="../../static/images/{{ tile }}.png"> <!--Static file reference does not work here-->
 		{% endif %}
 		{% endfor %}
 		<br>

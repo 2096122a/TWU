@@ -9,7 +9,7 @@ class Tile:
         self.right = False
         self.uncovered = False # False = tile has not been visited yet
 
-    def __str__(self):
+    def to_string(self):
         if self.uncovered:
             return str(8*int(self.up)+4*int(self.down)+2*int(self.left)+int(self.right))
         else:

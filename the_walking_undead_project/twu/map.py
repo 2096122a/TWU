@@ -21,9 +21,9 @@ class Map:
             for j in range(len(self.matrix[i])):
                 to_print = "0"
                 if int(str(self.matrix[i][j])) < 10:
-                    to_print = to_print + str(self.matrix[i][j])
+                    to_print = to_print + (self.matrix[i][j]).to_string()
                 else:
-                    to_print = str(self.matrix[i][j])
+                    to_print = (self.matrix[i][j]).to_string()
                 if self.player_pos == [i,j]:
                     to_print = to_print + "p"
                 print to_print,
@@ -33,7 +33,7 @@ class Map:
 
 
     def render(self):
-        return [[str(x) for x in row] for row in self.matrix]
+        return [[(x).to_string() for x in row] for row in self.matrix]
 
 
     def move_player(self,direction):
