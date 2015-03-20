@@ -106,17 +106,3 @@ class Map:
                 damage += 1
         self.player.lose_health(damage)
         return damage
-
-    
-mapp = Map(7)
-mapp.print_matrix()
-print mapp.render()
-print mapp
-command = ""
-while (command != "quit"):
-    command = raw_input("Enter a command: ")
-    mapp.move_player(command)
-    mapp.print_matrix()
-    print "You killed", mapp.perform_attack(6), "zombies"
-    print "The zombies hurt you for", mapp.hurt_player(), "damage"
-    mapp.print_matrix()
