@@ -1,45 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-{% load static %}
-<head>
-<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-<link rel="stylesheet" href="{% static "style.css" %}" /> 
-<title>howto1</title>
-</head>
-<body>
-<h2>THE WALKING UNDEAD</H2>
-<table style="text-align: left; width: 100%; height: 90%;" border="1" cellpadding="2" cellspacing="2">
+{% extends 'twu/base.html' %}
+{% load staticfiles %}
+{% block title %}How To Play{% endblock %}
+{% block body_block %}
+
+<table style="text-align: left; width: 100%; height: 90%;" border="0" cellpadding="2" cellspacing="2">
+<br>
 <tbody>
 <tr>
-<td style="width: 10%;"><img style="width: 100px; height: 100px;" alt="" src="images/2000px-Heart_coraz%F3n.svg.png"></td>
+<br><br>
+<td style="width: 10%;"><img style="width: 50%;" alt="" src="{% static 'images/Heart_corazon.svg.png' %}" ></td>
 <td>These are your Life Points. You lose one each time a Zombie bites you. Replenish them by locating Health Packs when you uncover a new tiles. If your Life Points ever reach 0, it's game over</td>
 </tr>
 <tr>
-<td>
-<img style="width: 100px; height: 75px;" alt="" src="images/45_acp_rn_silver_bullet.jpg"></td>
+<td><br><br>
+<img style="width: 100%;" alt="" src="{% static 'images/45_acp_rn_silver_bullet.jpg' %}" ></td>
 <td>Bullets are needed to use your gun. If you don't have bullets, you can use your gun. As with Life Points, you can find more when exploring a new tile.</td>
 </tr>
 <tr>
-<td>
-<img style="width: 100px; height: 29px;" alt="" src="images/2357234-shotgun_img.png"><br>&nbsp;Roll 2+ to hit</td>
+<td><br><br>
+<img style="width: 100px; height: 29px;" alt="" src="{% static 'images/2357234-shotgun_img.png' %}" ><br>&nbsp;Roll 2+ to hit</td>
 <td>Your gun, and the number you need to roll in order to shot a Zombie. Each shot uses 1 bullet, regardless of if it hits or not. If melee is selected, click your gun to switch to shooting.</td>
 </tr>
 <tr>
-<td>
-<img style="width: 100px; height: 75px;" alt="" src="images/baseballbatL.jpg"><br>Roll 5+ to hit</td>
+<td><br><br>
+<img style="width: 100px; height: 75px;" alt="" src="{% static 'images/baseballbatL.jpg' %}" ><br>Roll 5+ to hit</td>
 <td>Your melee weapon. Generally harder to hit a zombie with, but has unlimited usage. Your best fall back when low on bullets. if your gun is selected, click your melee weapon to get up close and personal with the undead.</td>
 </tr>
 <tr>
-<td>
-<img style="width: 100px; height: 100px;" alt="" src="images/mzi.loltlnrb.png"></td>
+<td><br><br>
+<img style="width: 100px; height: 100px;" alt="" src=" {% static 'images/mzi.loltlnrb.png' %} "></td>
 <td>Click this to generate your attack roll. You need to roll at least&nbsp;the number shown next to the selected weapon to hit a Zombie.</td>
 </tr>
 </tbody>
 </table>
 <br>
- <a href="howto2.html"> 
-<img border="0"  align ="right" src="images/zombiehand.png"></a>
+ <a href="{% url 'howto2'%}"> 
+<img border="0"  align ="right" src="{% static 'images/zombiehand.png'%}"></a>
  
-</body>
-</html>
+{% endblock %}
