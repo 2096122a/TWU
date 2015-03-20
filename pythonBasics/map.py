@@ -32,6 +32,10 @@ class Map:
         print "Zombies at tile: ", self.get_current_tile().zombies
 
 
+    def render(self):
+        return [[str(x) for x in row] for row in self.matrix]
+
+
     def move_player(self,direction):
         size = len(self.matrix)
         if direction == "up":
@@ -106,6 +110,8 @@ class Map:
     
 mapp = Map(7)
 mapp.print_matrix()
+print mapp.render()
+print mapp
 command = ""
 while (command != "quit"):
     command = raw_input("Enter a command: ")
