@@ -5,14 +5,14 @@
 
 {% block body_block %}
 <h3><br>
-<form action="{% url 'howto1' %}">
-    <input type="submit" style="background-color: transparent; border-color: transparent;" value="How To Play">
-</form>
-<br><br>
-<form action="{% url 'scoreboard' %}">
-    <input type="submit" style="background-color: transparent; border-color: transparent;" value="Scoreboard">
-</form><br><br>
 <form action="{% url 'game' %}">
     <input type="submit" style="background-color: transparent; border-color: transparent;" value=" Play Game">
+</form>
+<br><br>
+<form action="{% url 'howto1' %}">
+    <input type="submit" style="background-color: transparent; border-color: transparent;" value="How To Play">
+</form><br><br>
+<form action="{% url 'scoreboard' %}">
+    <input type="submit" style="background-color: transparent; border-color: transparent;" value="Scoreboard">
 </form></h3>
 {% endblock %}
