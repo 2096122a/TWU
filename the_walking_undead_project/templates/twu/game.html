@@ -4,11 +4,11 @@
 {% block title %}Index{% endblock %}
 {% block top_block_left %}
 <script>
-function myFunction() {
+function howToPlay() {
     window.open("{% url 'howto3' %}", "_blank", "resizable=yes");
 }
 </script>
-<button onclick="myFunction()"><h4>How To Play</h4></button>
+<text onclick="howToPlay()"><h4>How To Play</h4></button>
 {% endblock %}
 {% block top_block_right %}
 {% if user.is_authenticated %}
