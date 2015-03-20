@@ -1,27 +1,30 @@
 {% extends 'twu/base.html' %}
 {% load staticfiles %}
 {% block title %}MainMenu{% endblock %}
-
+{% block top_block_right %}
 <div class="navbar-collapse collapse">
-<ul class="nav navbar-nav navbar-left">
-<li><a href="{% url 'index' %}"><h4>How To Play</h4></a></li>
-</ul>
+
 <ul class="nav navbar-nav navbar-right">
 {% if user.is_authenticated %}
-<li><a href="{% url 'index' %}?next=/rango/"><h5>Logout</h5></a></li>
+<li><a href="{% url 'auth_logout' %}?next=/twu/"><h5>Logout</h5></a></li>
 {% else %}
-<li><a href="{% url 'index' %}"><h5>Log in /Register Here</h5></a></li>
+<li><a href="{% url 'auth_login' %}"><h5>Log in</h5></a></li>
+<li><a href="{% url 'registration_register' %}"><h5>Register Here</h5></a></li>
 {% endif %}
 </ul>
 </div>
+{% endblock%}
 {% block body_block %}
-
-<h3>Main Menu</h3>
-<br>
-<h1>New Game</h1>
-<br>
-<h1>Scoreboard</h1>
-<br>
-<h1>How To Play</h1>
+<h3><br>
+<form action="{% url 'howto1' %}">
+    <input type="submit" value="How To Play">
+</form>
+<br><br>
+<form action="{% url 'scoreboard' %}">
+    <input type="submit" value="Scoreboard">
+</form><br><br>
+<form action="{% url 'game' %}">
+    <input type="submit" value=" Play Game">
+</form></h3>
 {% endblock %}
 </html>
