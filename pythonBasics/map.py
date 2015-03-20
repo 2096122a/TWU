@@ -89,14 +89,19 @@ class Map:
                 self.player.bullets -= 1
                 if damage >= self.player.ranged_power:
                     self.kill_zombies(1)
+                    return 1
             else:
                 if damage >= self.player.melee_power:
                     self.kill_zombies(1)
+                    return 1
 
     def hurt_player(self):
+        damage = 0
         for zombie in range(self.get_current_tile().zombies):
             if random.randint(1,3) < 3:
-                self.player.lose_health()
+                damage += 1
+        self.player.lose_health(damage)
+        return damage
 
     
 mapp = Map(7)
@@ -106,6 +111,6 @@ while (command != "quit"):
     command = raw_input("Enter a command: ")
     mapp.move_player(command)
     mapp.print_matrix()
-    mapp.perform_attack(6)
-    mapp.hurt_player()
+    print "You killed", mapp.perform_attack(6), "zombies"
+    print "The zombies hurt you for", mapp.hurt_player(), "damage"
     mapp.print_matrix()

@@ -24,5 +24,5 @@ class Player:
             self.melee_name = weapon_name
             self.melee_power = weapons_melee[weapon_name]
 
-    def lose_health(self):
-        self.health -= 1
+    def lose_health(self, damage):
+        self.health -= damage
