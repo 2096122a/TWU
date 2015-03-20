@@ -5,10 +5,9 @@ from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from map import Map
 
-
-
-
+field_map = None
 
 def index(request):
 # can be used to score if user registered/logged in
@@ -18,6 +17,8 @@ def index(request):
 	
 def game(request):
     context_dict = {}
+    field_map = Map(7)
+    context_dict["tiles"] = field_map.render()
     return render(request, 'twu/game.html', context_dict)
 	
 def base(request):
