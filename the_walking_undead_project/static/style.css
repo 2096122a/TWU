@@ -1,7 +1,7 @@
 body {background-image:url('../../static/images/dark-zombie_00223197.jpg');color:white;}
 @font-face {
 	font-family: blood;
-	src: url(test.woff);
+	src: url(newblood.woff);
 }
 
 P {color:white;}

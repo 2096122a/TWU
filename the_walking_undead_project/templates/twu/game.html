@@ -1,7 +1,7 @@
 {% extends 'twu/base.html' %}
 {% load staticfiles %}
 
-{% block title %}Index{% endblock %}
+{% block title %}Game Page{% endblock %}
 {% block top_block_left %}
 <script>
 function howToPlay() {
@@ -12,7 +12,8 @@ function howToPlay() {
 {% endblock %}
 {% block top_block_right %}
 {% if user.is_authenticated %}
-<li><a href="{% url 'auth_logout' %}?next=/twu/"><h5> {{ user.username }} Logout</h5></a></li>
+<h5>{{ user.username }}
+<li><a href="{% url 'auth_logout' %}?next=/twu/">Logout</h5></a></li>
 {% else %}
 <li><a href="{% url 'auth_login' %}"><h5>Log in</h5></a></li>
 <li><a href="{% url 'registration_register' %}"><h5>Register Here</h5></a></li>
