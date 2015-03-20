@@ -1,18 +1,17 @@
 {% extends 'twu/base.html' %}
 {% load staticfiles %}
 {% block title %}Index{% endblock %}
-<div class="navbar-collapse collapse">
-<ul class="nav navbar-nav navbar-left">
+{% block top_block_left %}
 <li><a href="{% url 'index' %}"><h4>How To Play</h4></a></li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
+{% endblock %}
+{% block top_block_right %}
 {% if user.is_authenticated %}
 <li><a href="{% url 'index' %}?next=/rango/"><h5>Logout</h5></a></li>
 {% else %}
 <li><a href="{% url 'index' %}"><h5>Log in /Register Here</h5></a></li>
 {% endif %}
-</ul>
-</div>
+{% endblock %}
+
 {% block side_blockl %}
 <br><br>
 <img style="width: 50%; height: 20%;" alt="" src="{% static 'images/Heart_corazon.svg.png' %}" ><img style="width: 100px; height: 100px;" alt="" src="{% static 'images/45_acp_rn_silver_bullet.jpg' %}" ><br><br>&lt;&lt;Life value&gt;&gt;&lt;&lt;Bullet value&gt;&gt;
@@ -44,4 +43,3 @@ You see 3 Zombies
 <br><br>
 
 {% endblock %}
-</html>

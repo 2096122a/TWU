@@ -6,11 +6,15 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
+
+
+
+
 def index(request):
 # can be used to score if user registered/logged in
     context_dict = {}
     return render(request, 'twu/index.html', context_dict)
-<<<<<<< HEAD
+
 	
 def game(request):
     context_dict = {}
