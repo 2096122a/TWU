@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'twu',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,4 +106,8 @@ PASSWORD_HASHERS = (
 'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 )
 
-LOGIN_URL = '/twu/login/'
+REGISTRATION_OPEN = True                # If True, users can register
+ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged in.
+LOGIN_REDIRECT_URL = '/twu/'  # The page you want users to arrive at after they successful log in
+LOGIN_URL = '/accounts/login/'
