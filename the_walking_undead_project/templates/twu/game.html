@@ -6,7 +6,7 @@
 {% endblock %}
 {% block top_block_right %}
 {% if user.is_authenticated %}
-<li><a href="{% url 'auth_logout' %}?next=/twu/"><h5>Logout</h5></a></li>
+<li><a href="{% url 'auth_logout' %}?next=/twu/"><h5> {{ user.username }} Logout</h5></a></li>
 {% else %}
 <li><a href="{% url 'auth_login' %}"><h5>Log in</h5></a></li>
 <li><a href="{% url 'registration_register' %}"><h5>Register Here</h5></a></li>
@@ -36,7 +36,15 @@
 {% endblock %}
 
 {% block body_block %}
-<img style="width: 65%; height: 65%;" alt="" src="{% static 'images/sample_map.png' %} "><br>
+{% if tiles %}
+	{% for row in tiles %}
+		{% for tile in row %}
+			<img alt="{{ tile }}" src="{% static '{{ tile }}.png' %}">
+		{% endfor %}
+		<br>
+	{% endfor %}
+{% endif %}
+<br>
 &lt;&lt;in game text feedback box&gt;&gt; <br>
 You pick up 2 Health Packs and 1 Bullet<br>
 You find a Shotgun, aka your "Boom Stick"<br>
