@@ -12,7 +12,7 @@ class UserProfile(models.Model):
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
         return self.user.username
-# Create your models here.
+### Create your models here.
 
 class Score(models.Model):
     player = models.ForeignKey(UserProfile)
