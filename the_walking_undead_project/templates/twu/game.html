@@ -3,6 +3,7 @@
 
 {% block title %}Game Page{% endblock %}
 {% block top_block_left %}
+<br><br><br>
 <script>
 function howToPlay() {
     window.open("{% url 'howto3' %}", "_blank", "resizable=yes");
@@ -10,18 +11,10 @@ function howToPlay() {
 </script>
 <text onclick="howToPlay()"><h4>How To Play</h4></button>
 {% endblock %}
-{% block top_block_right %}
-{% if user.is_authenticated %}
-<h5>{{ user.username }}
-<li><a href="{% url 'auth_logout' %}?next=/twu/">Logout</h5></a></li>
-{% else %}
-<li><a href="{% url 'auth_login' %}"><h5>Log in</h5></a></li>
-<li><a href="{% url 'registration_register' %}"><h5>Register Here</h5></a></li>
-{% endif %}
-{% endblock %}
+
 
 {% block side_blockl %}
-<br><br>
+<br><br><br><br>
 <img style="width: 50%; height: 20%;" alt="" src="{% static 'images/Heart_corazon.svg.png' %}" ><img style="width: 100px; height: 100px;" alt="" src="{% static 'images/45_acp_rn_silver_bullet.jpg' %}" ><br><br>&lt;&lt;Life value&gt;&gt;&lt;&lt;Bullet value&gt;&gt;
 <br><br><br><br><br>
 <img style="width: 100%; height: 15%;" alt="" src="{% static 'images/baseballbatL.jpg' %}" ><br>&lt;&lt;melee weapon title and hit value&gt;&gt;
@@ -29,7 +22,7 @@ function howToPlay() {
 <img style="width: 120%; height: 10%;" alt="" src="{% static 'images/gun.png' %}" ><br><br><br><br><br>&lt;&lt;Firearm title and hit value&gt;&gt;<br>
 {% endblock %}
 {% block side_block %}
-<br><br>
+<br><br><br><br>
 <img style="width: 100%; height: 25%;" alt="" src=" {% static 'images/mzi.loltlnrb.png' %} "><br>&lt;&lt;To be updated when rolled&gt;&gt;<br><br><br><br>
 <img style="width: 25%; height: 15%;" alt="" src="{% static 'images/spacer.png' %}">
 <img style="width: 25%; height: 10%;"  alt="" src="{% static 'images/up_arrow.png' %}"><br>
@@ -43,6 +36,7 @@ function howToPlay() {
 {% endblock %}
 
 {% block body_block %}
+<br><br>
 {% if tiles %}
 	{% for row in tiles %}
 		{% for tile in row %}
