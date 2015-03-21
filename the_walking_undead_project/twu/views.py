@@ -45,7 +45,12 @@ def howto4(request):
 # can be used to score if user registered/logged in
     context_dict = {}
     return render(request, 'twu/howto4.html', context_dict)
-	
+
+def gameover(request):
+# can be used to score if user registered/logged in
+    context_dict = {}
+    return render(request, 'twu/gameover.html', context_dict)
+
 def scoreboard(request):
 # can be used to score if user registered/logged in
     context_dict = {}

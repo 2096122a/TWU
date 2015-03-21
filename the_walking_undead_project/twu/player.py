@@ -26,3 +26,12 @@ class Player:
 
     def lose_health(self, damage):
         self.health -= damage
+
+##i *think* we need am edit to the zombie attack along the lines of
+##"if after zombie attack, player health <1, throw exception" and
+##the catch exception causes the pop up?
+##might need ajax for that. chapter 19 in tango book
+
+##    def check_death(self):
+##        if self.health < 1:
+##            raise ValueException("Player has died!")
