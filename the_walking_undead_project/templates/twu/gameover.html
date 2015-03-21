@@ -1,0 +1,21 @@
+{% extends 'twu/base.html' %}
+{% load staticfiles %}
+{% block title %}Game Over...{% endblock %}
+{% block body_block %}
+<script>
+function closeWin() {
+    myWindow.close();
+}
+</script>
+
+<html>
+
+    <body>
+	<h1>You have died. Check your score to see how you did.</h1>
+    </body>
+
+</html>
+
+<br> <a href="{% url 'scoreboard'%}">  
+<img border="0"  align ="right" src="{% static 'images/zombiehand.png' %}"></a>
+{% endblock %}

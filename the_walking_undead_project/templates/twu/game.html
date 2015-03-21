@@ -10,6 +10,13 @@ function howToPlay() {
 }
 </script>
 <text onclick="howToPlay()"><h4>How To Play</h4></button>
+<br>
+<script>
+function gameover() {
+    window.open("{% url 'gameover' %}", "_blank", "resizable=yes");
+}
+</script>
+<text onclick="gameover()"><h4>Game Over</h4></button>
 {% endblock %}
 
 
