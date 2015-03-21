@@ -11,12 +11,26 @@ function howToPlay() {
 </script>
 <text onclick="howToPlay()"><h4>How To Play</h4></button>
 <br>
-<script>
-function gameover() {
-    window.open("{% url 'gameover' %}", "_blank", "resizable=yes");
-}
-</script>
-<text onclick="gameover()"><h4>Game Over</h4></button>
+<html>
+<head>
+
+    <script language="Javascript">
+
+        function showgameover(){
+            url = "gameover"
+            newwindow=window.open(url,'gameover','height=500,width=900');
+            if (window.focus) {newwindow.focus()}
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <text onclick="showgameover()"><h4>Game Over</h4></button>
+
+</body>
+</html>
 {% endblock %}
 
 
