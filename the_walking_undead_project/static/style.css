@@ -4,7 +4,7 @@ body {background-image:url('../../static/images/dark-zombie_00223197.jpg');color
 	src: url(newblood.woff);
 }
 
-P {color:white;}
+P {color:white; font-size: 1vw}
 H1 {color:red; font-size:3vw; font-family: blood; text-align:center}
 H2 {color:red; font-size:500%; font-family: blood; text-align:center}
 H3 {color:red; font-size:5vw; font-family: blood; text-align:center}
