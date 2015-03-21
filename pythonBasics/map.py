@@ -32,12 +32,32 @@ class Map:
         print "Zombies at tile: ", self.get_current_tile().zombies
 
 
+#### following code added by Kenny - Please check you are happy with it
+#
+#
+#
+#
+#
+#
+#
+#
+    def add_zombies (self):
+        for i in range(len(self.matrix)):
+            for j in range(len(self.matrix[i])):
+                if self.uncovered = True:
+                    add_chance = (random.randint(1,4))
+                    if add_chance%4 == 0:
+                        self.zombies+=1
+                            
+
+
     def render(self):
         return [[str(x) for x in row] for row in self.matrix]
 
 
     def move_player(self,direction):
         size = len(self.matrix)
+        self.add_zombies()#########this added by Kenny
         if direction == "up":
             if self.player_pos[0]>1 and self.get_current_tile().up:
                 self.player_pos[0]-=1
