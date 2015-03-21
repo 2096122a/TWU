@@ -5,11 +5,12 @@ body {background-image:url('../../static/images/dark-zombie_00223197.jpg');color
 }
 
 P {color:white;}
-H1 {color:red; font-size:300%; font-family: blood; text-align:center}
+H1 {color:red; font-size:3vw; font-family: blood; text-align:center}
 H2 {color:red; font-size:500%; font-family: blood; text-align:center}
-H3 {color:red; font-size:500%; font-family: blood; text-align:center}
-H4 {color:red; font-size:200%; font-family: blood; text-align:left}
-H5 {color:red; font-size:200%; font-family: blood; text-align:right}
+H3 {color:red; font-size:5vw; font-family: blood; text-align:center}
+H4 {color:red; font-size:1.5vw; font-family: blood; text-align:left}
+H5 {color:red; font-size:1.5vw; font-family: blood; text-align:right}
+
 
 
 			

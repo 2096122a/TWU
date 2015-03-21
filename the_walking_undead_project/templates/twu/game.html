@@ -8,29 +8,18 @@
 function howToPlay() {
     window.open("{% url 'howto3' %}", "_blank", "resizable=yes");
 }
-</script>
-<text onclick="howToPlay()"><h4>How To Play</h4></button>
-<br>
-<html>
-<head>
-
-    <script language="Javascript">
-
-        function showgameover(){
+function showgameover(){
             url = "gameover"
             newwindow=window.open(url,'gameover','height=500,width=900');
             if (window.focus) {newwindow.focus()}
         }
+</script>
+<text onclick="howToPlay()"><h4>How To Play</h4></button>
+<br>
 
-    </script>
+<text onclick="showgameover()"><h4>Game Over</h4></button>
 
-</head>
-<body>
 
-    <text onclick="showgameover()"><h4>Game Over</h4></button>
-
-</body>
-</html>
 {% endblock %}
 
 

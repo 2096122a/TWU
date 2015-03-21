@@ -7,7 +7,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" href="http://getbootstrap.com/favicon.ico">
-<title>The Walking Undead - {% block title %}How to Tango with Django!{% endblock %}</title>
+<title>The Walking Undead - {% block title %}{% endblock %}</title>
 {% load staticfiles %}
 <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" >
 <link rel="stylesheet" href="{% static 'dashboard.css' %}" >
@@ -47,22 +47,25 @@
 </ul>
 <br>
 <ul class="nav">
-<a href="{% url 'index' %}"><h3>The Walking Undead</h3>
+<a href="{% url 'index' %}"><h3>The Walking Undead</h3></a>
 </ul>
 </div>
 </div>
 </div>
 <div class="col-sm-3 col-md-2 sidebar">
+
+
 {% block side_blockl %}
 {% endblock %}
 </div>
 <div class="col-sm-3 col-md-2 sidebarright">
+
 {% block side_block %}
 {% endblock %}
 </div>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 <div>
-<br><br>
+
 {% block body_block %}
 {% endblock %}
 </div>
