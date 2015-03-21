@@ -16,24 +16,16 @@ class Map:
         self.player_pos = [size/2,size/2]
 
 
-    def print_matrix(self):
-        for i in range(len(self.matrix)):
-            for j in range(len(self.matrix[i])):
-                to_print = "0"
-                if int(str(self.matrix[i][j])) < 10:
-                    to_print = to_print + (self.matrix[i][j]).to_string()
-                else:
-                    to_print = (self.matrix[i][j]).to_string()
-                if self.player_pos == [i,j]:
-                    to_print = to_print + "p"
-                print to_print,
-            print ""
-        print "Player: ", self.player.health
-        print "Zombies at tile: ", self.get_current_tile().zombies
-
+    def add_zombies(self):
+        for row in self.matrix:
+            for tile in row:
+                if tile.uncovered and str(tile) != "0":
+                    if random.randint(0,3) == 0:
+                        tile.zombies+=1
+                        
 
     def render(self):
-        return [[(x).to_string() for x in row] for row in self.matrix]
+        return [[str(x) for x in row] for row in self.matrix]
 
 
     def move_player(self,direction):

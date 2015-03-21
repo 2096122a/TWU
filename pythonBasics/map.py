@@ -32,24 +32,14 @@ class Map:
         print "Zombies at tile: ", self.get_current_tile().zombies
 
 
-#### following code added by Kenny - Please check you are happy with it
-#
-#
-#
-#
-#
-#
-#
-#
-    def add_zombies (self):
-        for i in range(len(self.matrix)):
-            for j in range(len(self.matrix[i])):
-                if self.uncovered = True:
-                    add_chance = (random.randint(1,4))
-                    if add_chance%4 == 0:
-                        self.zombies+=1
+    def add_zombies(self):
+        for row in self.matrix:
+            for tile in row:
+                if tile.uncovered and str(tile) != "0":
+                    print "tile =", tile
+                    if random.randint(0,3) == 0:
+                        tile.zombies+=1
                             
-
 
     def render(self):
         return [[str(x) for x in row] for row in self.matrix]
@@ -57,7 +47,7 @@ class Map:
 
     def move_player(self,direction):
         size = len(self.matrix)
-        self.add_zombies()#########this added by Kenny
+        self.add_zombies()
         if direction == "up":
             if self.player_pos[0]>1 and self.get_current_tile().up:
                 self.player_pos[0]-=1
@@ -130,8 +120,6 @@ class Map:
     
 mapp = Map(7)
 mapp.print_matrix()
-print mapp.render()
-print mapp
 command = ""
 while (command != "quit"):
     command = raw_input("Enter a command: ")
