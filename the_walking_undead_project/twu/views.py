@@ -17,7 +17,9 @@ def index(request):
 	
 def game(request):
     context_dict = {}
-    field_map = Map(7)
+    global field_map
+    if not field_map:
+        field_map = Map(7)
     context_dict["tiles"] = field_map.render()
     return render(request, 'twu/game.html', context_dict)
 	
@@ -75,7 +77,9 @@ def index(request):
 def go_up(request):
     context_dict = {}
     print "Called go_up"
+    global field_map
     field_map.move_player("up")
+    print field_map.render()
     context_dict["tiles"] = field_map.render()
     return render(request, 'twu/game.html', context_dict)
 
@@ -83,6 +87,7 @@ def go_up(request):
 def go_down(request):
     context_dict = {}
     print "Called go_down"
+    global field_map
     field_map.move_player("down")
     context_dict["tiles"] = field_map.render()
     return render(request, 'twu/game.html', context_dict)
@@ -91,6 +96,7 @@ def go_down(request):
 def go_left(request):
     context_dict = {}
     print "Called go_left"
+    global field_map
     field_map.move_player("left")
     context_dict["tiles"] = field_map.render()
     return render(request, 'twu/game.html', context_dict)
@@ -99,6 +105,7 @@ def go_left(request):
 def go_right(request):
     context_dict = {}
     print "Called go_right"
+    global field_map
     field_map.move_player("right")
     context_dict["tiles"] = field_map.render()
     return render(request, 'twu/game.html', context_dict)
