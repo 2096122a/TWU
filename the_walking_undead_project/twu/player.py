@@ -12,6 +12,7 @@ class Player:
         self.melee_name = "bat"
         self.melee_power = 5
         self.ranged_used = True
+        self.score = 0
 
 
     def set_ranged(self, weapon_name):
@@ -25,7 +26,8 @@ class Player:
             self.melee_power = weapons_melee[weapon_name]
 
     def lose_health(self, damage):
-        self.health -= damage
+        if self.health > damage:
+            self.health -= damage
 
 ##i *think* we need am edit to the zombie attack along the lines of
 ##"if after zombie attack, player health <1, throw exception" and

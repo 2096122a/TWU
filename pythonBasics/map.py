@@ -35,14 +35,16 @@ class Map:
     def add_zombies(self):
         for row in self.matrix:
             for tile in row:
-                if tile.uncovered and str(tile) != "0":
+                if tile.uncovered and str(tile) != "0" and self.get_current_tile() != tile:
                     print "tile =", tile
                     if random.randint(0,3) == 0:
                         tile.zombies+=1
                             
 
     def render(self):
-        return [[str(x) for x in row] for row in self.matrix]
+        rendered = [[str(x) for x in row] for row in self.matrix]
+        rendered[self.player_pos[0]][self.player_pos[1]] += "p"
+        return rendered
 
 
     def move_player(self,direction):
@@ -61,6 +63,7 @@ class Map:
             if self.player_pos[1]<size-2 and self.get_current_tile().right:
                 self.player_pos[1]+=1
         if not self.matrix[self.player_pos[0]][self.player_pos[1]].uncovered:
+            self.player.score += 1000
             self.generate()
 
 
@@ -94,6 +97,7 @@ class Map:
 
     
     def kill_zombies(self, number):
+        self.player.score += number*200
         self.get_current_tile().zombies -= number
 
 
@@ -120,6 +124,7 @@ class Map:
     
 mapp = Map(7)
 mapp.print_matrix()
+#print mapp.render()
 command = ""
 while (command != "quit"):
     command = raw_input("Enter a command: ")
@@ -127,4 +132,5 @@ while (command != "quit"):
     mapp.print_matrix()
     print "You killed", mapp.perform_attack(6), "zombies"
     print "The zombies hurt you for", mapp.hurt_player(), "damage"
+    print "Your score is", mapp.player.score, "points" 
     mapp.print_matrix()
