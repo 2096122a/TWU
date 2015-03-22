@@ -19,7 +19,7 @@ class Map:
     def add_zombies(self):
         for row in self.matrix:
             for tile in row:
-                if tile.uncovered and str(tile) != "0":
+                if tile.uncovered and str(tile) != "0" and self.get_current_tile() != tile:
                     if random.randint(0,3) == 0:
                         tile.zombies+=1
                         
@@ -45,6 +45,7 @@ class Map:
             if self.player_pos[1]<size-2 and self.get_current_tile().right:
                 self.player_pos[1]+=1
         if not self.matrix[self.player_pos[0]][self.player_pos[1]].uncovered:
+            self.player.score += 1000
             self.generate()
 
 
@@ -78,6 +79,7 @@ class Map:
 
     
     def kill_zombies(self, number):
+        self.player.score += number*200
         self.get_current_tile().zombies -= number
 
 
