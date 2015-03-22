@@ -1,6 +1,7 @@
 from tile import Tile
 from player import Player
 import random
+from map import *
 
 class Map:
 

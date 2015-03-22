@@ -84,7 +84,7 @@ def go_up(request):
     field_map.move_player("up")
     print field_map.render()
     context_dict["tiles"] = field_map.render()
-    return render(request, 'twu/game.html', context_dict)
+    return (go_up) #render(request, 'twu/game.html', context_dict)
 
 
 def go_down(request):
@@ -112,6 +112,12 @@ def go_right(request):
     field_map.move_player("right")
     context_dict["tiles"] = field_map.render()
     return render(request, 'twu/game.html', context_dict)
+	
+def dice(request):
+	roll = random.randint(1,6)
+	context_dict = {damage : roll}
+	return render(request, 'twu/game.html', context_dict)
+
 
 ##def register(request):
 ##

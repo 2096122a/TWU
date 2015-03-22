@@ -33,15 +33,16 @@ function showgameover(){
 {% endblock %}
 {% block side_block %}
 <br><br><br><br>
-<img style="width: 10vw; height: 10vw;" alt="" src=" {% static 'images/mzi.loltlnrb.png' %} "><br>&lt;&lt;To be updated when rolled&gt;&gt;<br><br><br><br>
+
+<input type="image" style="width: 10vw; height: 10vw;" alt="" src=" {% static 'images/mzi.loltlnrb.png' %} " class="dice"><br><id="result">&lt;&lt;To be updated when rolled&gt;&gt;<br><br><br><br>
 <img style="width: 25%; height: 10%" alt="" src="{% static 'images/spacer.png' %}">
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/up_arrow.png' %}" name="up" class="btTxt submit" id="up">
+<input type="image" class="ouch" id="up" style="width: 25%; height: 10%"  alt="" src="{% static 'images/up_arrow.png' %}">
 <br>
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/left_arrow.png' %} " name="left" class="btTxt submit" id="left">
+<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/left_arrow.png' %} " name="left" class="ouch" id="left">
 <img style="width: 25%; height: 10%"  alt="" src="{% static 'images/spacer.png' %} ">
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/right_arrow.png' %} " name="right" class="btTxt submit" id="right">
+<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/right_arrow.png' %} " name="right" class="ouch" id="right">
 <img style="width: 25%; height: 10%"  alt="" src="{% static 'images/spacer.png' %} ">
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/down_arrow.png' %} " name="down" class="btTxt submit" id="down">
+<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/down_arrow.png' %} " name="down" class="ouch" id="down">
 <br><br><br><br><br>
 &lt;&lt;SCORE COUNTER&gt;&gt;
 {% endblock %}
@@ -67,5 +68,6 @@ You see 3 Zombies
 <br><br>
 
 
-<text onclick="showgameover()"><h4>Game Over</h4></button>
+
+
 {% endblock %}

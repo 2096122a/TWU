@@ -1,39 +1,38 @@
 $(document).ready( function() {
 
-    $("#up").click( function() {
-	$.get('/twu/game/go_up/', {}, function(data){
-            
+
+ 
+	$("#up").click( function(event) {
+           
+		   $.get('/twu/game/go_up/', {}, function(event){
+            $('#game_screen').html(data);
         });
-    });
+});
 
-    $("#down").click( function() {
-	$.get('/twu/game/go_down/')
-    });
+$("#down").click( function(event) {
+          
+		   $.get('/twu/game/go_down/', {}, function(event){
+            $('#game_screen').html(data);
+        });
+});
 
-    $("#left").click( function() {
+$("#left").click( function() {
 	$.get('/twu/game/go_left/')
+	$('#game_screen').html(data);
     });
 
     $("#right").click( function() {
 	$.get('/twu/game/go_right/')
+	$('#game_screen').html(data);
     });
-
-    $("#up").hover( function() {
-            $(this).css('width', 30%);
-            $(this).css('height', 12%);
-            $( this ).fadeOut( 100 );
-    },
-    function() {
-            $(this).css('width', 25%);
-            $(this).css('height', 10%);
-            $( this ).fadeIn( 500 );
-    });
-
-    $("p").hover( function() {
-            $(this).css('color', 'red');
-    },
-    function() {
-            $(this).css('color', 'blue');
-    });
+	
+	
+$.ajax({
+  type: "POST",
+  url: "~/../pythonBasics/map.py",
+  data: { direction: down}
+}).done(function( player_move ) {
+   // do something
+});
 
 });
