@@ -42,7 +42,9 @@ class Map:
                             
 
     def render(self):
-        return [[str(x) for x in row] for row in self.matrix]
+        rendered = [[str(x) for x in row] for row in self.matrix]
+        rendered[self.player_pos[0]][self.player_pos[1]] += "p"
+        return rendered
 
 
     def move_player(self,direction):
@@ -120,6 +122,7 @@ class Map:
     
 mapp = Map(7)
 mapp.print_matrix()
+print mapp.render()
 command = ""
 while (command != "quit"):
     command = raw_input("Enter a command: ")
