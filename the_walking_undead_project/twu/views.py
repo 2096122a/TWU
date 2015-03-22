@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from twu.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from map import Map
+from twu.models import Score
+
+#from twu.forms import UserForm, UserProfileForm
 
 field_map = None
 
@@ -53,17 +55,18 @@ def gameover(request):
 
 def scoreboard(request):
 # can be used to score if user registered/logged in
-    context_dict = {}
+    top5_today = Score.objects.order_by('-timestamp','-score')[:5]
+    context_dict = {'scores': top5_today}
     return render(request, 'twu/scoreboard.html', context_dict)
 
 # Use the login_required() decorator to ensure only those logged in can access the view.
-@login_required
-def user_logout(request):
+#@login_required
+#def user_logout(request):
     # Since we know the user is logged in, we can now just log them out.
-    logout(request)
+ #   logout(request)
 
     # Take the user back to the homepage.
-    return HttpResponseRedirect('/twu/')
+#    return HttpResponseRedirect('/twu/')
 
 def index(request):
 # can be used to score if user registered/logged in

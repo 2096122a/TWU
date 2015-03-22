@@ -12,12 +12,15 @@
 <td style="text-align: center"> TOP 5 THIS WEEK </td>
 <td style="text-align: center"> TOP 5 THIS MONTH</td>
 </tr>
-<td><h1>name<br>
-<br>
-name <br><br>
-name <br><br>
-Name <br><br>
-Name <h1></td>
+<td>{% if scores %}
+		<ul>
+			{% for score in scores %}
+			<li> {{score.player}}  {{score.score}}</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<strong>There are no scores.</strong>
+	{% endif %}</td>
 <td>name1<br>
 name 2<br>
 name3</td>

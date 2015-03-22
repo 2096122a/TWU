@@ -1,23 +1,24 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime, date
 
-class UserProfile(models.Model):
-    # This line is required. Links UserProfile to a User model instance.
-    user = models.OneToOneField(User)
+#class UserProfile(models.Model):
+#    # This line is required. Links UserProfile to a User model instance.
+#    user = models.OneToOneField(User)
 
     # The additional attributes we wish to include.
-    website = models.URLField(blank=True)
-    picture = models.ImageField(upload_to='profile_images', blank=True)
+#    website = models.URLField(blank=True)
+#    picture = models.ImageField(upload_to='profile_images', blank=True)
 
     # Override the __unicode__() method to return out something meaningful!
-    def __unicode__(self):
-        return self.user.username
+#    def __unicode__(self):
+#        return self.user.username
 ### Create your models here.
 
 class Score(models.Model):
-    player = models.ForeignKey(UserProfile)
+    player = models.ForeignKey(User)
     score = models.IntegerField(default=0)
-    timestamp = models.DateTimeField()
+    timestamp = models.DateTimeField(default=datetime.now, blank=True)
 
     def _unicode_(self):
         return self.score
