@@ -1,21 +1,21 @@
 $(document).ready( function() {
 
     $("#up").click( function() {
-	$.get('/twu/go_up/', {}, function(data){
+	$.get('/twu/game/go_up/', {}, function(data){
             
         });
     });
 
     $("#down").click( function() {
-	$.get('/twu/go_down/')
+	$.get('/twu/game/go_down/')
     });
 
     $("#left").click( function() {
-	$.get('/twu/go_left/')
+	$.get('/twu/game/go_left/')
     });
 
     $("#right").click( function() {
-	$.get('/twu/go_right/')
+	$.get('/twu/game/go_right/')
     });
 
     $("#up").hover( function() {

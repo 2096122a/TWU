@@ -47,6 +47,7 @@ function showgameover(){
 {% endblock %}
 
 {% block body_block %}
+<div id="game_screen">
 {% if tiles %}
 	{% for row in tiles %}
 		{% for tile in row %}
@@ -57,6 +58,7 @@ function showgameover(){
 		<br>
 	{% endfor %}
 {% endif %}
+</div>
 <br>
 &lt;&lt;in game text feedback box&gt;&gt; <br>
 You pick up 2 Health Packs and 1 Bullet<br>
