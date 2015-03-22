@@ -22,7 +22,12 @@ function closeWin() {
             self.close();
         }
 
-    </script>
+</script>
+<script>
+window.onload = function() {
+    document.getElementById("scream.mp3").play();
+}
+</script>
 
 <html>
 
@@ -35,6 +40,17 @@ function closeWin() {
 	<h1>You have died. Check your score to see how you did.</h1>
 	<br><br><br><br>
 	<text onclick="gameover()"><h4 style="text-align:center">Scoreboard</h4></button>
+
+
+	<audio autoplay>
+ 		<source src="/static/scream.mp3" />
+ 		<!-- fallback -->
+  	            <embed type="application/x-shockwave-flash"                                                         
+    			flashvars="audioUrl=/static/scream.mp3"    
+     			    src="http://www.google.com/reader/ui/3523697345-audio-player.swf"   
+     				width="650? height="0? quality="best"></embed>
+	</audio>
     </body>
+
 </html>
 {% endblock %}
