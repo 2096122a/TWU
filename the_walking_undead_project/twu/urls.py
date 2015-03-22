@@ -10,8 +10,10 @@ urlpatterns = patterns('',
 	   url(r'^howto4/$', views.howto4, name='howto4'),
            url(r'^game/gameover/$', views.gameover, name='gameover'),
 	   url(r'^scoreboard/$', views.scoreboard, name='scoreboard'),
-	   #url(r'^register/$', views.register, name='register'),
-       #url(r'^login/$', views.user_login, name='login'),
-       #url(r'^logout/$', views.user_logout, name='logout'),
+	   url(r'^go_up/$', views.go_up, name='go_up'),
+           url(r'^go_down/$', views.go_down, name='go_down'),
+           url(r'^go_left/$', views.go_left, name='go_left'),
+           url(r'^go_right/$', views.go_right, name='go_right'),
+           
 	 
         )
