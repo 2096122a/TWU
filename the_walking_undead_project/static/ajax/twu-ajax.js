@@ -1,25 +1,25 @@
 $(document).ready( function() {
 
     $("#up").click( function(event) {
-        $.get('/twu/game/go_up/', {}, function(data){
+        $.get('/twu/game/move/', {direction: "up"}, function(data){
             $("#game_screen").html(data);
         });
     });
 
     $("#down").click( function(event) {
-        $.get('/twu/game/go_down/', {}, function(data){
+        $.get('/twu/game/move/', {direction: "down"}, function(data){
             $("#game_screen").html(data);
         });
     });
 
     $("#left").click( function(event) {
-        $.get('/twu/game/go_left/', {}, function(data){
+        $.get('/twu/game/move/', {direction: "left"}, function(data){
             $("#game_screen").html(data);
         });
     });
 
     $("#right").click( function(event) {
-        $.get('/twu/game/go_right/', {}, function(data){
+        $.get('/twu/game/move/', {direction: "right"}, function(data){
             $("#game_screen").html(data);
         });
     });
@@ -31,31 +31,6 @@ $(document).ready( function() {
         });
     });
 
- 
-	$("#upp").click( function(event) {
-           
-		   $.get('/twu/game/go_up/', {}, function(event){
-            $('#game_screen').html(data);
-        });
-});
-
-$("#downn").click( function(event) {
-          
-		   $.get('/twu/game/go_down/', {}, function(event){
-            $('#game_screen').html(data);
-        });
-});
-
-$("#leftt").click( function() {
-	$.get('/twu/game/go_left/')
-	$('#game_screen').html(data);
-    });
-
-    $("#rightt").click( function() {
-	$.get('/twu/game/go_right/')
-	$('#game_screen').html(data);
-    });
-	
 	
 $.ajax({
   type: "POST",

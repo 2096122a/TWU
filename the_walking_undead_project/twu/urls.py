@@ -10,10 +10,7 @@ urlpatterns = patterns('',
 	   url(r'^howto4/$', views.howto4, name='howto4'),
            url(r'^game/gameover/$', views.gameover, name='gameover'),
 	   url(r'^scoreboard/$', views.scoreboard, name='scoreboard'),
-	   url(r'^game/go_up/$', views.go_up, name='go_up'),
-           url(r'^game/go_down/$', views.go_down, name='go_down'),
-           url(r'^game/go_left/$', views.go_left, name='go_left'),
-           url(r'^game/go_right/$', views.go_right, name='go_right'),
+	   url(r'^game/move/$', views.move, name='move'),
            url(r'^game/roll_dice/$', views.dice, name='roll_dice'),
 	 
         )

@@ -78,42 +78,17 @@ def index(request):
     return render(request, 'twu/index.html', context_dict)
 
 
-def go_up(request):
+def move(request):
     context_dict = {}
-    print "Called go_up"
+    print "Called move"
     global field_map
-    field_map.move_player("up")
+    if request.method == 'GET':
+        field_map.move_player(request.GET['direction'])
     print field_map.render()
     context_dict["tiles"] = field_map.render()
     return render(request, 'twu/map.html', context_dict)
 
 
-def go_down(request):
-    context_dict = {}
-    print "Called go_down"
-    global field_map
-    field_map.move_player("down")
-    context_dict["tiles"] = field_map.render()
-    return render(request, 'twu/map.html', context_dict)
-
-
-def go_left(request):
-    context_dict = {}
-    print "Called go_left"
-    global field_map
-    field_map.move_player("left")
-    context_dict["tiles"] = field_map.render()
-    return render(request, 'twu/map.html', context_dict)
-
-
-def go_right(request):
-    context_dict = {}
-    print "Called go_right"
-    global field_map
-    field_map.move_player("right")
-    context_dict["tiles"] = field_map.render()
-    return render(request, 'twu/map.html', context_dict)
-	
 def dice(request):
     roll = random.randint(1,6)
     return render(request, 'twu/dice.html', {"damage" : roll})
