@@ -33,21 +33,23 @@ function showgameover(){
 {% endblock %}
 {% block side_block %}
 <br><br><br><br>
-<div id="dice">
+<div id="dice" class="move">
 <input type="image" style="width: 10vw; height: 10vw;" alt="" src="../../static/images/dice5.png" class="dice"><br>
 </div>
 &lt;&lt;To be updated when rolled&gt;&gt;<br><br><br><br>
 <img style="width: 25%; height: 10%" alt="" src="{% static 'images/spacer.png' %}">
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/up_arrow.png' %}" name="up" class="btTxt submit" id="up">
+<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/up_arrow.png' %}" name="up" class="btTxt submit move" id="up">
 <br>
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/left_arrow.png' %} " name="left" class="btTxt submit" id="left">
+<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/left_arrow.png' %} " name="left" class="btTxt submit move" id="left">
 <img style="width: 25%; height: 10%"  alt="" src="{% static 'images/spacer.png' %} ">
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/right_arrow.png' %} " name="right" class="btTxt submit" id="right">
+<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/right_arrow.png' %} " name="right" class="btTxt submit move" id="right">
 <img style="width: 25%; height: 10%"  alt="" src="{% static 'images/spacer.png' %} ">
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/down_arrow.png' %} " name="down" class="btTxt submit" id="down">
+<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/down_arrow.png' %} " name="down" class="btTxt submit move" id="down">
 
 <br><br><br><br><br>
+<div id="score_counter">
 &lt;&lt;SCORE COUNTER&gt;&gt;
+</div>
 {% endblock %}
 
 {% block body_block %}

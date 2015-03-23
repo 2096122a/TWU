@@ -94,6 +94,10 @@ def dice(request):
     return render(request, 'twu/dice.html', {"damage" : roll})
 
 
+def get_score(request):
+    return HttpResponse(field_map.player.score)
+
+
 ##def register(request):
 ##
 ##    # A boolean value for telling the template whether the registration was successful.

@@ -12,5 +12,6 @@ urlpatterns = patterns('',
 	   url(r'^scoreboard/$', views.scoreboard, name='scoreboard'),
 	   url(r'^game/move/$', views.move, name='move'),
            url(r'^game/roll_dice/$', views.dice, name='roll_dice'),
+           url(r'^game/get_score/$', views.get_score, name='get_score'),
 	 
         )

@@ -24,20 +24,18 @@ $(document).ready( function() {
         });
     });
 
-
     $("#dice").click( function(event) {
         $.get('/twu/game/roll_dice/', {}, function(data){
             $("#dice").html(data);
         });
     });
 
-	
-$.ajax({
-  type: "POST",
-  url: "~/../pythonBasics/map.py",
-  data: { direction: down}
-}).done(function( player_move ) {
-   // do something
-});
+    $(".move").click( function(event) {
+        $.get('/twu/game/get_score/', {}, function(data){
+            $("#score_counter").html(data);
+        });
+    });
+
+
 
 });
