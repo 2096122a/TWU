@@ -36,13 +36,13 @@ function showgameover(){
 
 <input type="image" style="width: 10vw; height: 10vw;" alt="" src=" {% static 'images/mzi.loltlnrb.png' %} " class="dice"><br><id="result">&lt;&lt;To be updated when rolled&gt;&gt;<br><br><br><br>
 <img style="width: 25%; height: 10%" alt="" src="{% static 'images/spacer.png' %}">
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/up_arrow.png' %}" name="u" class="btTxt submit" id="u">
+<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/up_arrow.png' %}" name="up" class="btTxt submit" id="up">
 <br>
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/left_arrow.png' %} " name="lef" class="btTxt submit" id="lef">
+<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/left_arrow.png' %} " name="left" class="btTxt submit" id="left">
 <img style="width: 25%; height: 10%"  alt="" src="{% static 'images/spacer.png' %} ">
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/right_arrow.png' %} " name="righ" class="btTxt submit" id="righ">
+<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/right_arrow.png' %} " name="right" class="btTxt submit" id="right">
 <img style="width: 25%; height: 10%"  alt="" src="{% static 'images/spacer.png' %} ">
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/down_arrow.png' %} " name="dow" class="btTxt submit" id="dow">
+<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/down_arrow.png' %} " name="down" class="btTxt submit" id="down">
 
 <br><br><br><br><br>
 &lt;&lt;SCORE COUNTER&gt;&gt;
@@ -54,7 +54,7 @@ function showgameover(){
 	{% for row in tiles %}
 		{% for tile in row %}
 		{% if tile != '0' %}
-			<img style="width: 9vw; height: 6vw;"  alt="" src="../../static/images/{{ tile }}.png"> <!--Static file reference does not work here-->
+			<img style="width: 5vw; height: 6vw;"  alt="" src="../../static/images/{{ tile }}.png"> <!--Static file reference does not work here-->
 		{% endif %}
 		{% endfor %}
 		<br>
@@ -68,13 +68,7 @@ You find a Shotgun, aka your "Boom Stick"<br>
 You see 3 Zombies
 <br><br>
 
-<p>This is a example</p>
 
-<p>This is another example</p>
-<button id="up" class ="ouc"> Click Me - I'm Javascript on Speed</button>
-<button id="down" class ="ouc"> Click Me - I'm Javascript on Speed</button>
-<button id="left" class ="ouc"> Click Me - I'm Javascript on Speed</button>
-<button id="right" class ="ouc"> Click Me - I'm Javascript on Speed</button>
 
 
 

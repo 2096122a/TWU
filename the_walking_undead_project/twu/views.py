@@ -84,7 +84,7 @@ def go_up(request):
     field_map.move_player("up")
     print field_map.render()
     context_dict["tiles"] = field_map.render()
-    return (go_up) #render(request, 'twu/game.html', context_dict)
+    return render(request, 'twu/game.html', context_dict)
 
 
 def go_down(request):
