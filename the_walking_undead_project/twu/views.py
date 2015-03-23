@@ -84,7 +84,7 @@ def go_up(request):
     field_map.move_player("up")
     print field_map.render()
     context_dict["tiles"] = field_map.render()
-    return render(request, 'twu/game.html', context_dict)
+    return render(request, 'twu/map.html', context_dict)
 
 
 def go_down(request):
@@ -93,7 +93,7 @@ def go_down(request):
     global field_map
     field_map.move_player("down")
     context_dict["tiles"] = field_map.render()
-    return render(request, 'twu/game.html', context_dict)
+    return render(request, 'twu/map.html', context_dict)
 
 
 def go_left(request):
@@ -102,7 +102,7 @@ def go_left(request):
     global field_map
     field_map.move_player("left")
     context_dict["tiles"] = field_map.render()
-    return render(request, 'twu/game.html', context_dict)
+    return render(request, 'twu/map.html', context_dict)
 
 
 def go_right(request):
@@ -111,12 +111,12 @@ def go_right(request):
     global field_map
     field_map.move_player("right")
     context_dict["tiles"] = field_map.render()
-    return render(request, 'twu/game.html', context_dict)
+    return render(request, 'twu/map.html', context_dict)
 	
 def dice(request):
-	roll = random.randint(1,6)
-	context_dict = {damage : roll}
-	return render(request, 'twu/game.html', context_dict)
+    roll = random.randint(1,6)
+    context_dict = {damage : roll}
+    return render(request, 'twu/game.html', context_dict)
 
 
 ##def register(request):
