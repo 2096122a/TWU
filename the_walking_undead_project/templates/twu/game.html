@@ -33,8 +33,23 @@ function showgameover(){
 {% endblock %}
 {% block side_block %}
 <br><br><br><br>
-<div id="dice" class="move">
-<input type="image" style="width: 10vw; height: 10vw;" alt="" src="../../static/images/dice5.png" class="dice"><br>
+<script type = "text/javascript">
+
+function show() {
+	document.getElementById("dice").style.display="none";
+    document.getElementById("myDiv").style.display="block";
+    setTimeout("hide()", 1000);  // 5 seconds
+}
+
+function hide() {
+	document.getElementById("dice").style.display="block";
+    document.getElementById("myDiv").style.display="none";
+}
+
+</script>
+<div id = "myDiv" style="display:none"><img id = "myImage" style="width: 10vw; height: 10vw;" src = "{% static 'images/dice.gif' %}"></div><br>
+<div id="dice">
+<input type="image" style="width: 10vw; height: 10vw; display:block" alt="" src="../../static/images/dice5.png" class="dice" onclick="show()"><br>
 </div>
 <br><br><br><br>
 <img style="width: 25%; height: 10%" alt="" src="{% static 'images/spacer.png' %}">
