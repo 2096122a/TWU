@@ -108,11 +108,11 @@ class Map:
                 self.player.bullets -= 1
                 if damage >= self.player.ranged_power:
                     self.kill_zombies(1)
-                    return 1
+                    return "You killed", 1, "zombies."
             else:
                 if damage >= self.player.melee_power:
                     self.kill_zombies(1)
-                    return 1
+                    return "You killed", 1, "zombies."
 
     def hurt_player(self):
         damage = 0
@@ -120,7 +120,14 @@ class Map:
             if random.randint(1,3) < 3:
                 damage += 1
         self.player.lose_health(damage)
-        return damage
+        if damage > 0:
+            return "The zombies hurt you for", damage, "damage."
+        else:
+            return "You took no damage."
+
+
+    def tile_info(self):
+        return "There are", self.get_current_tile().zombies, "on this tile."
 
     
 mapp = Map(7)

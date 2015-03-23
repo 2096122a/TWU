@@ -8,6 +8,7 @@ class Tile:
         self.left = False
         self.right = False
         self.uncovered = False # False = tile has not been visited yet
+        self.zombies = 0
 
     def __str__(self):
         if self.uncovered:
