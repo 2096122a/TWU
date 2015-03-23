@@ -54,7 +54,7 @@ function showgameover(){
 	{% for row in tiles %}
 		{% for tile in row %}
 		{% if tile != '0' %}
-			<img style="width: 5vw; height: 6vw;"  alt="" src="../../static/images/{{ tile }}.png"> <!--Static file reference does not work here-->
+			<img style="width: 9vw; height: 6vw;"  alt="" src="../../static/images/{{ tile }}.png"> <!--Static file reference does not work here-->
 		{% endif %}
 		{% endfor %}
 		<br>
@@ -62,12 +62,13 @@ function showgameover(){
 {% endif %}
 </div>
 <br>
+<div id ="text_box" align="center">
 &lt;&lt;in game text feedback box&gt;&gt; <br>
 You pick up 2 Health Packs and 1 Bullet<br>
 You find a Shotgun, aka your "Boom Stick"<br>
 You see 3 Zombies
+</div>
 <br><br>
-
 
 
 
