@@ -8,10 +8,21 @@
 
 
 {% block body_block %}
+<script>
+function logginToPlay() {
+    window.alert("Log In To Play");
+	}
+	</script>
 <h3>
+{% if user.is_authenticated %}
 <form action="{% url 'game' %}">
     <input type="submit" style="background-color: transparent; border-color: transparent;" value=" Play Game">
-</form>
+	</form>
+{% else %}
+<form action="{% url 'auth_login' %}">
+    <input type="submit" style="background-color: transparent; border-color: transparent;" value=" Log In To Play">
+	</form>
+{% endif %}
 <br>
 <form action="{% url 'howto1' %}">
     <input type="submit" style="background-color: transparent; border-color: transparent;" value="How To Play">

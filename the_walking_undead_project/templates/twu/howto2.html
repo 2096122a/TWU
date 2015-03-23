@@ -36,7 +36,12 @@
 </tr>
 </tbody>
 </table>
+{% if user.is_authenticated %}
 <br><a href="{% url 'game'%}">  
 <img border="0"  align ="right" src="{% static 'images/zombiehand.png' %}"></a>
+{% else %}
+<br><a href="{% url 'auth_login'%}">  
+<img border="0"  align ="right" src="{% static 'images/zombiehand.png' %}"></a>
+{% endif %}
  
 {% endblock %}

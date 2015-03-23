@@ -25,18 +25,18 @@ function showgameover(){
 {% block side_blockl %}
 <br><br><br><br>
 <img style="width: 5vw; height: 5vw;" alt="" src="{% static 'images/Heart_corazon.svg.png' %}" >Life<br>
-<img style="width: 5vw; height: 5vw;" alt="" src="{% static 'images/45_acp_rn_silver_bullet.jpg' %}"><p>Bullets</p>
+<img style="width: 5vw; height: 5vw;" alt="" src="{% static 'images/45_acp_rn_silver_bullet.jpg' %}">Bullets
 <br><br><br>
-<img style="width: 10vw; height: 6vw;" alt="" src="{% static 'images/baseballbatL.jpg' %}" ><br>&lt;&lt;melee weapon title and hit value&gt;&gt;
+<img style="width: 10vw; height: 6vw;" alt="" src="{% static 'images/baseballbatL.jpg' %}" ><br>Bat - 5+ to hit
 <br><br><br><br><br>
-<img style="width: 10vw; height: 5vw;" alt="" src="{% static 'images/gun.png' %}" ><br><br><br><br><br>&lt;&lt;Firearm title and hit value&gt;&gt;<br>
+<img style="width: 10vw; height: 5vw;" alt="" src="{% static 'images/gun.png' %}" ><br><br><br>Pistol - 3+ to hit<br>
 {% endblock %}
 {% block side_block %}
 <br><br><br><br>
 <div id="dice" class="move">
 <input type="image" style="width: 10vw; height: 10vw;" alt="" src="../../static/images/dice5.png" class="dice"><br>
 </div>
-&lt;&lt;To be updated when rolled&gt;&gt;<br><br><br><br>
+<br><br><br><br>
 <img style="width: 25%; height: 10%" alt="" src="{% static 'images/spacer.png' %}">
 <input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/up_arrow.png' %}" name="up" class="btTxt submit move" id="up">
 <br>
@@ -46,9 +46,10 @@ function showgameover(){
 <img style="width: 25%; height: 10%"  alt="" src="{% static 'images/spacer.png' %} ">
 <input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/down_arrow.png' %} " name="down" class="btTxt submit move" id="down">
 
-<br><br><br><br><br>
+<br>
+Score :
 <div id="score_counter">
-&lt;&lt;SCORE COUNTER&gt;&gt;
+0
 </div>
 {% endblock %}
 

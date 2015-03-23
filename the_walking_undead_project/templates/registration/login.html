@@ -1,12 +1,14 @@
 {% extends 'twu/base.html' %}
 {% block body_block %}
+<br>
+<br><br><br>
 
 <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
 
 <form class="form-signin" role="form" method="post" action=".">
 {% csrf_token %}
 
-<h2 class="form-signin-heading">Log in TWU</h2>
+<h2 class="form-signin-heading">Log in to play</h2>
 <input class="form-control" placeholder="Username" id="id_username" maxlength="254" name="username" type="text" required autofocus=""/>
 <input type="password" class="form-control" placeholder="Password" id="id_password" name="password" type="password" required />
 

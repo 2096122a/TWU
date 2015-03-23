@@ -33,6 +33,12 @@ name3</td>
 </tr>
 </tbody>
 </table>
-<a href="{% url 'game'%}">  
+
+{% if user.is_authenticated %}
+<br><a href="{% url 'game'%}">  
 <img style="width: 10%; height: 10%;" border="0"  align ="centre" src="{% static 'images/zombiehandtextKMZ.png' %}"></a>
+{% else %}
+<br><a href="{% url 'auth_login'%}">  
+<img style="width: 10%; height: 10%;" border="0"  align ="centre" src="{% static 'images/zombiehandtextKMZ.png' %}"></a>
+{% endif %}
 {% endblock %}

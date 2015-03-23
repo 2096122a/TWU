@@ -1,0 +1,10 @@
+{% if tiles %}
+	{% for row in tiles %}
+		{% for tile in row %}
+		{% if tile != '0' %}
+			<img style="width: 9vw; height: 6vw;"  alt="" src="../../static/images/{{ tile }}.png"> <!--Static file reference does not work here-->
+		{% endif %}
+		{% endfor %}
+		<br>
+	{% endfor %}
+{% endif %}
