@@ -6,6 +6,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from map import Map
 from twu.models import Score
+import random
 
 #from twu.forms import UserForm, UserProfileForm
 
@@ -115,8 +116,7 @@ def go_right(request):
 	
 def dice(request):
     roll = random.randint(1,6)
-    context_dict = {damage : roll}
-    return render(request, 'twu/game.html', context_dict)
+    return render(request, 'twu/dice.html', {"damage" : roll})
 
 
 ##def register(request):

@@ -33,8 +33,10 @@ function showgameover(){
 {% endblock %}
 {% block side_block %}
 <br><br><br><br>
-
-<input type="image" style="width: 10vw; height: 10vw;" alt="" src=" {% static 'images/mzi.loltlnrb.png' %} " class="dice"><br><id="result">&lt;&lt;To be updated when rolled&gt;&gt;<br><br><br><br>
+<div id="dice">
+<input type="image" style="width: 10vw; height: 10vw;" alt="" src="../../static/images/dice5.png" class="dice"><br>
+</div>
+&lt;&lt;To be updated when rolled&gt;&gt;<br><br><br><br>
 <img style="width: 25%; height: 10%" alt="" src="{% static 'images/spacer.png' %}">
 <input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/up_arrow.png' %}" name="up" class="btTxt submit" id="up">
 <br>

@@ -25,6 +25,11 @@ $(document).ready( function() {
     });
 
 
+    $("#dice").click( function(event) {
+        $.get('/twu/game/roll_dice/', {}, function(data){
+            $("#dice").html(data);
+        });
+    });
 
  
 	$("#upp").click( function(event) {
