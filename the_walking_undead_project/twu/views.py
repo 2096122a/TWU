@@ -82,10 +82,16 @@ def move(request):
     context_dict = {}
     print "Called move"
     global field_map
+    direction = ""
+    damage_taken = field_map.hurt_player()
     if request.method == 'GET':
-        field_map.move_player(request.GET['direction'])
-    print field_map.render()
+        direction = request.GET['direction']
+        field_map.move_player(direction)
     context_dict["tiles"] = field_map.render()
+    text_feedback = [ damage_taken,
+                      "You moved " + direction,
+                      field_map.tile_info()]
+    context_dict["text_feedback"] = text_feedback
     return render(request, 'twu/map.html', context_dict)
 
 

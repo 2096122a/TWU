@@ -103,11 +103,13 @@ class Map:
         for zombie in range(self.get_current_tile().zombies):
             if random.randint(1,3) < 3:
                 damage += 1
+        print self.player.health
+        print damage
         self.player.lose_health(damage)
         if damage > 0:
-            return "The zombies hurt you for", damage, "damage."
+            return "The zombies hurt you for" + damage + "damage."
         else:
             return "You took no damage."
 
     def tile_info(self):
-        return "There are", self.get_current_tile().zombies, "on this tile."
+        return "There are" + self.get_current_tile().zombies + "on this tile."
