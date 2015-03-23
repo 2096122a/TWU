@@ -28,7 +28,7 @@ function showgameover(){
 
 {% block side_blockl %}
 <br><br><br><br>
-<div id ="leftbar">
+<div id="left_bar">
 <img style="width: 5vw; height: 5vw;" alt="" src="{% static 'images/Heart_corazon.svg.png' %}" >30<br>
 <img style="width: 5vw; height: 5vw;" alt="" src="{% static 'images/45_acp_rn_silver_bullet.jpg' %}">6
 <br><br><br>
@@ -68,6 +68,8 @@ function hide() {
 <input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/down_arrow.png' %} " name="down" class="btTxt submit move" id="down">
 
 <br>
+<div id="test">
+</div>
 Score :
 <div id="score_counter">
 0
@@ -86,7 +88,7 @@ Score :
 		<br>
 	{% endfor %}
 {% endif %}
-</div>
+
 <br>
 <div id ="text_box" align="center">
 &lt;&lt;in game text feedback box&gt;&gt; <br>
@@ -95,9 +97,7 @@ You find a Shotgun, aka your "Boom Stick"<br>
 You see 3 Zombies
 sefjnksdg jn
 </div>
-<br><br>
-
-
+</div>
 
 
 {% endblock %}

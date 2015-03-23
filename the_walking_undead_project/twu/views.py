@@ -80,19 +80,17 @@ def index(request):
 
 def move(request):
     context_dict = {}
-    print "Called move"
     global field_map
     direction = ""
-#    damage_taken = field_map.hurt_player()
+    damage_taken = field_map.hurt_player()
     if request.method == 'GET':
         direction = request.GET['direction']
         field_map.move_player(direction)
-        print direction
     context_dict["tiles"] = field_map.render()
-#    text_feedback = [ damage_taken,
-#                      "You moved " + direction,
-#                      field_map.tile_info()]
-#    context_dict["text_feedback"] = text_feedback
+    text_feedback = [ damage_taken,
+                      "You moved " + direction,
+                      field_map.tile_info()]
+    context_dict["text_feedback"] = text_feedback
     return render(request, 'twu/map.html', context_dict)
 
 
@@ -115,6 +113,7 @@ def character_info(request):
     context_dict["ranged_name"] = field_map.player.ranged_name
     context_dict["ranged_power"] = field_map.player.ranged_power
     context_dict["ranged_used"] = field_map.player.ranged_used
+    print context_dict
     return render(request, 'twu/leftbar.html', context_dict)
 
 

@@ -33,11 +33,11 @@ $(document).ready( function() {
     });
 
     $(".move").click( function(event) {
-        $.get('/twu/game/get_score/', {}, function(data){
-            $("#score_counter").html(data);
-        });
-	$.get('/twu/game/character_info/', {}, function(data){
-	    $("#leftbar").html(data);
+	$.get('/twu/game/get_score/', {}, function(data){
+	    $("#score_counter").html(data);
+	});
+	$.get('/twu/game/character_info/', {}, function(data2){
+	    $("#left_bar").html(data2);
 	});
     });
 
@@ -62,6 +62,11 @@ $(document).ready( function() {
     });
 	
 
+    $("#check").click( function(event) {
+        $.get('/twu/game/character_info/', {}, function(data){
+            $('#left_bar').html(data);
+        });
+    });
 
 
 });
