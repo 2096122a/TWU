@@ -25,6 +25,9 @@ class Player:
             self.melee_name = weapon_name
             self.melee_power = weapons_melee[weapon_name]
 
+    def switch_active(self):
+        self.ranged_used = not self.ranged_used
+
     def lose_health(self, damage):
         if self.health > damage:
             self.health -= damage

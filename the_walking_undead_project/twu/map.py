@@ -85,11 +85,14 @@ class Map:
 
     def perform_attack(self, damage):
         if self.get_current_tile().zombies > 0:
-            if self.player.ranged_used and self.player.bullets>0:
-                self.player.bullets -= 1
-                if damage >= self.player.ranged_power:
-                    self.kill_zombies(1)
-                    return 1
+            if self.player.ranged_used:
+                if self.player.bullets>0:
+                    self.player.bullets -= 1
+                    if damage >= self.player.ranged_power:
+                        self.kill_zombies(1)
+                        return 1
+                else:
+                    self.player.switch_active()
             else:
                 if damage >= self.player.melee_power:
                     self.kill_zombies(1)
