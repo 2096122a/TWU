@@ -15,6 +15,10 @@ function showgameover(){
         }
 </script>
 <text onclick="howToPlay()"><h4>How To Play</h4></button>
+<audio id="player" src="/static/brains.mp3" autoplay loop></audio>
+<div>
+    <button style="background-color:transparent; color:white" onclick="document.getElementById('player').muted=!document.getElementById('player').muted"> Mute/Unmute </button>
+</div>
 <br>
   
 
