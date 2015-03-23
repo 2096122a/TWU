@@ -83,24 +83,22 @@ def move(request):
     print "Called move"
     global field_map
     direction = ""
-    damage_taken = field_map.hurt_player()
+#    damage_taken = field_map.hurt_player()
     if request.method == 'GET':
         direction = request.GET['direction']
         field_map.move_player(direction)
+        print direction
     context_dict["tiles"] = field_map.render()
-    text_feedback = [ damage_taken,
-                      "You moved " + direction,
-                      field_map.tile_info()]
-    context_dict["text_feedback"] = text_feedback
+#    text_feedback = [ damage_taken,
+#                      "You moved " + direction,
+#                      field_map.tile_info()]
+#    context_dict["text_feedback"] = text_feedback
     return render(request, 'twu/map.html', context_dict)
 
 
 def dice(request):
     roll = random.randint(1,6)
-    context_dict = {"damage" : roll}
-    perform_attack(roll)
-    hurt_player()
-    return render(request, 'twu/dice.html', context_dict)
+    return render(request, 'twu/dice.html', {"damage" : roll})
 
 
 def get_score(request):
