@@ -15,6 +15,10 @@ function showgameover(){
         }
 </script>
 <text onclick="howToPlay()"><h4>How To Play</h4></button>
+<audio id="player" src="/static/brains.mp3" autoplay loop></audio>
+<div>
+    <button style="background-color:transparent; color:white" onclick="document.getElementById('player').muted=!document.getElementById('player').muted"> Mute/Unmute </button>
+</div>
 <br>
   
 
@@ -24,12 +28,14 @@ function showgameover(){
 
 {% block side_blockl %}
 <br><br><br><br>
-<img style="width: 5vw; height: 5vw;" alt="" src="{% static 'images/Heart_corazon.svg.png' %}" >Life<br>
-<img style="width: 5vw; height: 5vw;" alt="" src="{% static 'images/45_acp_rn_silver_bullet.jpg' %}">Bullets
-<br><br>
+<div id ="leftbar">
+<img style="width: 5vw; height: 5vw;" alt="" src="{% static 'images/Heart_corazon.svg.png' %}" >30<br>
+<img style="width: 5vw; height: 5vw;" alt="" src="{% static 'images/45_acp_rn_silver_bullet.jpg' %}">6
+<br><br><br>
 <img style="width: 10vw; height: 6vw;" alt="" src="{% static 'images/baseballbatL.jpg' %}" ><br>Bat - 5+ to hit
-<br><br><br><br>
+<br><br><br><br><br>
 <img style="width: 10vw; height: 5vw;" alt="" src="{% static 'images/gun.png' %}" ><br><br><br>Pistol - 3+ to hit<br>
+</div>
 {% endblock %}
 {% block side_block %}
 <br><br><br><br>
@@ -74,7 +80,7 @@ Score :
 	{% for row in tiles %}
 		{% for tile in row %}
 		{% if tile != '0' %}
-			<img style="width: 9vw; height: 6vw;"  alt="" src="../../static/images/{{ tile }}.png"> <!--Static file reference does not work here-->
+			<img style="width: 9vw; height: 6vw;" alt="" src="../../static/images/{{ tile }}.png"> <!--Static file reference does not work here-->
 		{% endif %}
 		{% endfor %}
 		<br>
