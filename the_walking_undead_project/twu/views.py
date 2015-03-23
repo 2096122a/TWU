@@ -97,7 +97,10 @@ def move(request):
 
 def dice(request):
     roll = random.randint(1,6)
-    return render(request, 'twu/dice.html', {"damage" : roll})
+    context_dict = {"damage" : roll}
+    perform_attack(roll)
+    hurt_player()
+    return render(request, 'twu/dice.html', context_dict)
 
 
 def get_score(request):

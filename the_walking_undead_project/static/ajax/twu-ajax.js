@@ -6,6 +6,21 @@ $(document).ready( function() {
         });
     });
 
+	$(document).keydown(function(e){ 
+		if (e.keyCode == 87) 
+		$.get('/twu/game/move/', {direction: "up"}, function(data){ 
+			$("#game_screen").html(data); }); 
+			if (e.keyCode == 65) $.get('/twu/game/move/', {direction: "left"}, function(data){ 
+				$("#game_screen").html(data); }); 
+					if (e.keyCode == 68) 
+					$.get('/twu/game/move/', {direction: "right"}, function(data){ 
+					$("#game_screen").html(data); }); if (e.keyCode == 83) 
+					$.get('/twu/game/move/', {direction: "down"}, function(data){ 
+					$("#game_screen").html(data);
+					}); 
+					});
+	
+	
     $("#down").click( function(event) {
         $.get('/twu/game/move/', {direction: "down"}, function(data){
             $("#game_screen").html(data);
@@ -27,7 +42,9 @@ $(document).ready( function() {
     $("#dice").click( function(event) {
         $.get('/twu/game/roll_dice/', {}, function(data){
             $("#dice").html(data);
+			$("#text_box").html(data);
         });
+
     });
 
     $(".move").click( function(event) {

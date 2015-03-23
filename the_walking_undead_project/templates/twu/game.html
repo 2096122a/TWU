@@ -3,7 +3,7 @@
 
 {% block title %}Game Page{% endblock %}
 {% block top_block_left %}
-<br><br><br>
+<br>
 <script>
 function howToPlay() {
     window.open("{% url 'howto3' %}", "_blank", "resizable=yes");
@@ -14,7 +14,7 @@ function showgameover(){
             if (window.focus) {newwindow.focus()}
         }
 </script>
-<text onclick="howToPlay()"><h4>How To Play</h4></button>
+<text onclick="howToPlay()"><h4>How To Play</h4></text><br><br>
 <audio id="player" src="/static/brains.mp3" autoplay loop></audio>
 <div>
     <button style="background-color:transparent; color:white" onclick="document.getElementById('player').muted=!document.getElementById('player').muted"> Mute/Unmute </button>
@@ -32,9 +32,9 @@ function showgameover(){
 <img style="width: 5vw; height: 5vw;" alt="" src="{% static 'images/Heart_corazon.svg.png' %}" >30<br>
 <img style="width: 5vw; height: 5vw;" alt="" src="{% static 'images/45_acp_rn_silver_bullet.jpg' %}">6
 <br><br><br>
-<img style="width: 10vw; height: 6vw;" alt="" src="{% static 'images/baseballbatL.jpg' %}" ><br>Bat - 5+ to hit
+<img style="width: 10vw; height: 6vw;" alt="" src="{% static 'images/batTrue.png' %}" ><br>Bat - 5+ to hit
 <br><br><br><br><br>
-<img style="width: 10vw; height: 5vw;" alt="" src="{% static 'images/gun.png' %}" ><br><br><br>Pistol - 3+ to hit<br>
+<img style="width: 10vw; height: 5vw;" alt="" src="{% static 'images/pistolTrue.png' %}" ><br><br><br>Pistol - 3+ to hit<br>
 </div>
 {% endblock %}
 {% block side_block %}
@@ -93,6 +93,7 @@ Score :
 You pick up 2 Health Packs and 1 Bullet<br>
 You find a Shotgun, aka your "Boom Stick"<br>
 You see 3 Zombies
+sefjnksdg jn
 </div>
 <br><br>
 
