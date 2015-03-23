@@ -13,5 +13,6 @@ urlpatterns = patterns('',
 	   url(r'^game/move/$', views.move, name='move'),
            url(r'^game/roll_dice/$', views.dice, name='roll_dice'),
            url(r'^game/get_score/$', views.get_score, name='get_score'),
+           url(r'^game/character_info/$', views.character_info, name='character_info'),
 	 
         )
