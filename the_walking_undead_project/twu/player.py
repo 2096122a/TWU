@@ -6,7 +6,7 @@ class Player:
 
     def __init__(self):
         self.health = 30
-        self.bullets = 20
+        self.bullets = 6
         self.ranged_name = "pistol"
         self.ranged_power = 3
         self.melee_name = "bat"

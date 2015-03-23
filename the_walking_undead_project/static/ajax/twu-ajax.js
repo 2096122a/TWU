@@ -34,6 +34,9 @@ $(document).ready( function() {
         $.get('/twu/game/get_score/', {}, function(data){
             $("#score_counter").html(data);
         });
+	$.get('/twu/game/character_info/', {}, function(data){
+	    $("#leftbar").html(data);
+	});
     });
 
 

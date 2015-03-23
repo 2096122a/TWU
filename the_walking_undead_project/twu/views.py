@@ -98,6 +98,19 @@ def get_score(request):
     return HttpResponse(field_map.player.score)
 
 
+def character_info(request):
+    context_dict = {}
+    global field_map
+    context_dict["health"] = field_map.player.health
+    context_dict["bullets"] = field_map.player.bullets
+    context_dict["melee_name"] = field_map.player.melee_name
+    context_dict["melee_power"] = field_map.player.melee_power
+    context_dict["ranged_name"] = field_map.player.ranged_name
+    context_dict["ranged_power"] = field_map.player.ranged_power
+    context_dict["ranged_used"] = field_map.player.ranged_used
+    return render(request, 'twu/leftbar.html', context_dict)
+
+
 ##def register(request):
 ##
 ##    # A boolean value for telling the template whether the registration was successful.
