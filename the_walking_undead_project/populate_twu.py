@@ -106,10 +106,10 @@ def populate():
               timestamp='2015-03-24', score=131)
 
     add_score(player=Ross_user,
-              timestamp='2015-03-24', score=999999)
+              timestamp='2015-03-24', score=999999999999)
 
     add_score(player=Ross_user,
-              timestamp='2015-03-14', score=999999)
+              timestamp='2015-03-14', score=99999999999)
 
     add_score(player=Legolas,
               timestamp='2015-03-19', score=45)
