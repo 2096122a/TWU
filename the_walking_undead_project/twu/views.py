@@ -21,7 +21,7 @@ def index(request):
 def game(request):
     context_dict = {}
     field_map = request.session.get('field_map')
-    if not field_map:
+    if field_map == "":
         field_map = Map(7)
     else:
         f = open( "pickle.p", "wb")
@@ -36,6 +36,16 @@ def game(request):
     request.session['field_map'] = f.read()
     f.close()
     return render(request, 'twu/game.html', context_dict)
+
+@login_required
+def map_refresh(request):
+    context_dict = {}
+    request.session['field_map'] = ""
+    return render(request, 'twu/map.html', context_dict)
+
+
+
+    
 		
 def howto1(request):
 # can be used to score if user registered/logged in
@@ -128,7 +138,7 @@ def get_score(request):
     return HttpResponse(field_map.player.score)
 
 
-@login_required
+
 def character_info(request):
     context_dict = {}
 
