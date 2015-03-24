@@ -88,15 +88,28 @@ class Map:
             if self.player.ranged_used:
                 if self.player.bullets>0:
                     self.player.bullets -= 1
-                    if damage >= self.player.ranged_power:
+                    
+                    if int(damage) >= int(self.player.ranged_power):
                         self.kill_zombies(1)
+                        
                         return "You killed 1 zombies."
+                    else:
+                       
+                        return "You missed!"
+                        
                 else:
                     self.player.switch_active()
             else:
+                
                 if damage >= self.player.melee_power:
                     self.kill_zombies(1)
+                    
                     return "You killed 1 zombies."
+                else:
+                   
+                    return "You missed!"
+        else:
+            return "There are no zombies here"
 
     def hurt_player(self):
         damage = 0
