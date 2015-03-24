@@ -8,11 +8,7 @@
 
 
 {% block body_block %}
-<script>
-function logginToPlay() {
-    window.alert("Log In To Play");
-	}
-	</script>
+
 <h3>
 {% if user.is_authenticated %}
 <input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/up_arrow.png' %}" name="up" class="newmap" id="newmap">

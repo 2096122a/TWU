@@ -21,7 +21,7 @@ def index(request):
 def game(request):
     context_dict = {}
     field_map = request.session.get('field_map')
-    if field_map == "":
+    if not field_map:
         field_map = Map(7)
     else:
         f = open( "pickle.p", "wb")
