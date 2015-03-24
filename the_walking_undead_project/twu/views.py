@@ -78,8 +78,8 @@ def gameover(request):
 
     current_user = User.objects.get(username = request.user.get_username())
     newScore= Score.objects.get_or_create(player=current_user,score=int(field_map.player.score),timestamp=datetime.now())
-    
-    context_dict = {}
+    score = str(field_map.player.score)
+    context_dict = {'score' : score}
     request.session['field_map'] = ""
     return render(request, 'twu/gameover.html', context_dict)
 
