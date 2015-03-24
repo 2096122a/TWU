@@ -31,15 +31,27 @@ $(document).ready( function() {
         });
     });
 
-    $("#dice").click( function(event) {
-        $.get('/twu/game/roll_dice/', {}, function(data){
-            $("#dice").html(data);
-			});
-		$.get('/twu/game/player_attack/', {damage : data}, function(data2){
-			$("#text_box").html(data2);
+    $("#newdice").click( function(event) {
+		$.get('/twu/game/player_attack/', {}, function(data){
+			$("#dice").html(data);
+			$("#text_box").html(data);
+
         });
 
     });
+	
+	$("#dice").click( function(event) {
+		var number = 1 + Math.floor(Math.random() * 6);
+        $.get('/twu/game/roll_dice/', { roll : number}, function(data){
+            $("#dice").html(data);
+			});
+		$.get('/twu/game/player_attack/', {damage : number}, function(data2){
+			$("#text_box").html(data2);
+
+        });
+
+    });
+
 
     $(".move").click( function(event) {
 	$.get('/twu/game/get_score/', {}, function(data){

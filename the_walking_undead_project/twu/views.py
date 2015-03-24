@@ -75,8 +75,11 @@ def gameover(request):
 
 def scoreboard(request):
 # can be used to score if user registered/logged in
-    top5_today = Score.objects.order_by('-timestamp','-score')[:5]
-    context_dict = {'scores': top5_today}
+    top5_all_time = Score.objects.order_by('-score')[:5]
+    top5_today = Score.objects.order_by('-timestamp' , '-score')[:5]
+    context_dict = {}
+    context_dict['scores'] = top5_all_time
+    context_dict['scores2'] = top5_today
     return render(request, 'twu/scoreboard.html', context_dict)
 
 # Use the login_required() decorator to ensure only those logged in can access the view.
@@ -138,10 +141,10 @@ def player_attack(request):
     field_map = pickle.load(open( "pickle.p", "rb"))
     if request.method == 'GET':
         damage = request.GET['damage']
-
+    
     zombie_killed = field_map.perform_attack(damage)
     damage_taken = field_map.hurt_player()
-    text_feedback = [ zombie_killed,
+    text_feedback = [  zombie_killed,
                       damage_taken,
                       field_map.tile_info()]
     context_dict["text_feedback"] = text_feedback
@@ -156,7 +159,8 @@ def player_attack(request):
 
 @login_required
 def dice(request):
-    roll = random.randint(1,6)
+    if request.method == 'GET':
+        roll = request.GET['roll']
     return render(request, 'twu/dice.html', {"damage" : roll})
 
 
