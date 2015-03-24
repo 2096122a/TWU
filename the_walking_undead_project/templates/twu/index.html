@@ -11,25 +11,17 @@
 
 <h3>
 {% if user.is_authenticated %}
-<a id="newmap" href="{% url 'game'%}">  Play game</a>
-<input type="image" border="0"  align ="right" src="{% static 'images/PlayGame.png' %}" name="PlayGame" class="newmap" id="newmap"></a>
+<h3 id="newmap">New Game</h3><br>
 
-
-<form action="{% url 'game' %}">
-    <input type="submit" id ="newmap" class="newmap" style="background-color: transparent; border-color: transparent;" value=" Play Game">
-	</form>
 {% else %}
-<form action="{% url 'auth_login' %}">
-    <input type="submit" id ="newmap" class="newmap" style="background-color: transparent; border-color: transparent;" value=" Log In To Play">
-	</form>
-{% endif %}
+<a href="{% url 'auth_login'%}"><h3>Log In To Play</h3></a><br>
 
+{% endif %}
 <br>
-<form action="{% url 'howto1' %}">
-    <input type="submit" style="background-color: transparent; border-color: transparent;" value="How To Play">
-</form><br>
-<form action="{% url 'scoreboard' %}">
-    <input type="submit" style="background-color: transparent; border-color: transparent;" value="Scoreboard">
-</form></h3>
+<br><br><br>
+<a href="{% url 'howto1'%}"><h3>How To Play</h3></a>
+<br><br><br><br>
+<a href="{% url 'scoreboard'%}"><h3>Scoreboard</h3></a>
+</h3>
 
 {% endblock %}
