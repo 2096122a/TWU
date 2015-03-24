@@ -130,10 +130,10 @@ def player_attack(request):
     field_map = pickle.load(open( "pickle.p", "rb"))
     if request.method == 'GET':
         damage = request.GET['damage']
-
+    
     zombie_killed = field_map.perform_attack(damage)
     damage_taken = field_map.hurt_player()
-    text_feedback = [ zombie_killed,
+    text_feedback = [  zombie_killed,
                       damage_taken,
                       field_map.tile_info()]
     context_dict["text_feedback"] = text_feedback
@@ -148,7 +148,8 @@ def player_attack(request):
 
 @login_required
 def dice(request):
-    roll = random.randint(1,6)
+    if request.method == 'GET':
+        roll = request.GET['roll']
     return render(request, 'twu/dice.html', {"damage" : roll})
 
 
