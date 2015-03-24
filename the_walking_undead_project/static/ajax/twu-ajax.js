@@ -20,7 +20,14 @@ $(document).ready( function() {
 
     $("#right").click( function(event) {
         $.get('/twu/game/move/', {direction: "right"}, function(data){
-            $("#game_screen").html(data);
+		console.log(data)
+		if (data == "1") {
+			location.href = ('/twu/game/gameover/')
+		} 
+		else {
+			$("#game_screen").html(data);
+			console.log(data)
+		}
         });
     });
 
@@ -68,7 +75,7 @@ $(document).ready( function() {
 
 	 $("#newmap").click( function(event) {
 		$.get('/twu/game/map_refresh/', {}, function(data){
-		location.href = ('/twu/game')	 
+		location.href = ('/twu/game/')	 
         });
 
     });

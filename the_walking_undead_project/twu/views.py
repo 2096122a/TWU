@@ -98,27 +98,35 @@ def index(request):
 @login_required
 def move(request):
     context_dict = {}
-
+    print "run1"
     f = open( "pickle.p", "wb")
     f.write(request.session.get('field_map'))
     f.close()
     field_map = pickle.load(open( "pickle.p", "rb"))
-    
+    print "run2"
     direction = ""
-    damage_taken = field_map.hurt_player()
+    try:
+        damage_taken = field_map.hurt_player()
+    except:
+        context_dict["error"] = "1"
+        print render(request, 'twu/empty.html', context_dict)
+        return render(request, 'twu/empty.html', context_dict)
+    print "run3"
     if request.method == 'GET':
         direction = request.GET['direction']
         field_map.move_player(direction)
     context_dict["tiles"] = field_map.render()
+    print "run4"
     text_feedback = [ damage_taken,
                       "You moved " + direction,
                       field_map.tile_info()]
     context_dict["text_feedback"] = text_feedback
-
+    print "run5"
     pickle.dump( field_map, open( "pickle.p", "wb"))
     f = open( "pickle.p", "rb")
     request.session['field_map'] = f.read()
     f.close()
+    print "run6"
     return render(request, 'twu/map.html', context_dict)
 	
 @login_required
