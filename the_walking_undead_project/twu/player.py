@@ -31,6 +31,8 @@ class Player:
     def lose_health(self, damage):
         if self.health > damage:
             self.health -= damage
+        else:
+            raise PlayerIsDead("Game Over")
 
 ##i *think* we need am edit to the zombie attack along the lines of
 ##"if after zombie attack, player health <1, throw exception" and
