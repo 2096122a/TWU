@@ -30,10 +30,10 @@
 	{% endif %}</td></tbody></table>
 
 {% if user.is_authenticated %}
-<br><a href="{% url 'game'%}">  
-<img style="width: 10%; height: 10%;" border="0"  align ="centre" src="{% static 'images/zombiehandtextKMZ.png' %}"></a>
+<br> 
+<img style="width: 10%; height: 10%;" border="0"  class "newmap" id="newmap" align ="centre" src="{% static 'images/zombiehandtextKMZ.png' %}">
 {% else %}
 <br><a href="{% url 'auth_login'%}">  
-<img style="width: 10%; height: 10%;" border="0"  align ="centre" src="{% static 'images/zombiehandtextKMZ.png' %}"></a>
+<img style="width: 10%; height: 10%;" border="0"  class ="newmap" id="newmap" align ="centre" src="{% static 'images/zombiehandtextKMZ.png' %}"></a>
 {% endif %}
 {% endblock %}

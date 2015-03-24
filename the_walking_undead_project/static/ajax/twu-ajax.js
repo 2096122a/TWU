@@ -2,31 +2,44 @@ $(document).ready( function() {
 
     $("#up").click( function(event) {
         $.get('/twu/game/move/', {direction: "up"}, function(data){
-            $("#game_screen").html(data);
-        });
-    });
-	
-    $("#down").click( function(event) {
-        $.get('/twu/game/move/', {direction: "down"}, function(data){
-            $("#game_screen").html(data);
-        });
-    });
-
-    $("#left").click( function(event) {
-        $.get('/twu/game/move/', {direction: "left"}, function(data){
-            $("#game_screen").html(data);
-        });
-    });
-
-    $("#right").click( function(event) {
-        $.get('/twu/game/move/', {direction: "right"}, function(data){
-		console.log(data)
 		if (data == "1") {
 			location.href = ('/twu/game/gameover/')
 		} 
 		else {
 			$("#game_screen").html(data);
-			console.log(data)
+		}
+        });
+    });
+	
+    $("#down").click( function(event) {
+        $.get('/twu/game/move/', {direction: "down"}, function(data){
+		if (data == "1") {
+			location.href = ('/twu/game/gameover/')
+		} 
+		else {
+			$("#game_screen").html(data);
+		}
+        });
+    });
+
+    $("#left").click( function(event) {
+        $.get('/twu/game/move/', {direction: "left"}, function(data){
+		if (data == "1") {
+			location.href = ('/twu/game/gameover/')
+		} 
+		else {
+			$("#game_screen").html(data);
+		}
+        });
+    });
+
+    $("#right").click( function(event) {
+        $.get('/twu/game/move/', {direction: "right"}, function(data){
+		if (data == "1") {
+			location.href = ('/twu/game/gameover/')
+		} 
+		else {
+			$("#game_screen").html(data);
 		}
         });
     });

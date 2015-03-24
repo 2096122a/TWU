@@ -32,6 +32,7 @@ class Map:
 
     def move_player(self,direction):
         size = len(self.matrix)
+	self.add_zombies()
         if direction == "up":
             if self.player_pos[0]>1 and self.get_current_tile().up:
                 self.player_pos[0]-=1
