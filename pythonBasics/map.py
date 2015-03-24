@@ -1,7 +1,6 @@
 from tile import Tile
 from player import Player
-import random
-from map import *
+import random, pickle
 
 class Map:
 
@@ -129,10 +128,31 @@ class Map:
     def tile_info(self):
         return "There are", self.get_current_tile().zombies, "on this tile."
 
-    
+
 mapp = Map(7)
 mapp.print_matrix()
-#print mapp.render()
+"""
+mapp.move_player("up")
+mapp.move_player("up")
+mapp.move_player("left")
+mapp.move_player("down")
+mapp.hurt_player()
+mapp.hurt_player()
+mapp.hurt_player()
+pickle.dump( mapp, open( "save.p", "w" ))
+filename = open( "save.p", "r")
+string = filename.read()
+print "string=", string
+file2 = open( "save2.p", "w")
+file2.write(string)
+file2.close()
+mapp2 = pickle.load(open( "save2.p", "r"))
+print "mapp"
+mapp.print_matrix()
+print "mapp2"
+mapp2.print_matrix()
+"""
+print mapp.render()
 command = ""
 while (command != "quit"):
     command = raw_input("Enter a command: ")
