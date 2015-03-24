@@ -11,7 +11,9 @@
 
 <h3>
 {% if user.is_authenticated %}
-<input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/up_arrow.png' %}" name="up" class="newmap" id="newmap">
+<a id="newmap" href="{% url 'game'%}">  Play game</a>
+<input type="image" border="0"  align ="right" src="{% static 'images/PlayGame.png' %}" name="PlayGame" class="newmap" id="newmap"></a>
+
 
 <form action="{% url 'game' %}">
     <input type="submit" id ="newmap" class="newmap" style="background-color: transparent; border-color: transparent;" value=" Play Game">

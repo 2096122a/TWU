@@ -70,7 +70,7 @@ $(document).ready( function() {
 
 	 $("#newmap").click( function(event) {
 		$.get('/twu/game/map_refresh/', {}, function(data){
-			 
+		location.href = ('/twu/game')	 
         });
 
     });
