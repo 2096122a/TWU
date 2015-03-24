@@ -120,6 +120,30 @@ def move(request):
     request.session['field_map'] = f.read()
     f.close()
     return render(request, 'twu/map.html', context_dict)
+	
+@login_required
+def player_attack(request):
+    context_dict = {}
+    f = open( "pickle.p", "wb")
+    f.write(request.session.get('field_map'))
+    f.close()
+    field_map = pickle.load(open( "pickle.p", "rb"))
+    if request.method == 'GET':
+        damage = request.GET['damage']
+
+    zombie_killed = field_map.perform_attack(damage)
+    damage_taken = field_map.hurt_player()
+    text_feedback = [ zombie_killed,
+                      damage_taken,
+                      field_map.tile_info()]
+    context_dict["text_feedback"] = text_feedback
+
+    pickle.dump( field_map, open( "pickle.p", "wb"))
+    f = open( "pickle.p", "rb")
+    request.session['field_map'] = f.read()
+    f.close()
+    return render(request, 'twu/map.html', context_dict)
+
 
 
 @login_required

@@ -27,7 +27,9 @@ $(document).ready( function() {
     $("#dice").click( function(event) {
         $.get('/twu/game/roll_dice/', {}, function(data){
             $("#dice").html(data);
-	    $("#text_box").html(data);
+			});
+		$.get('/twu/game/player_attack/', {damage : data}, function(data2){
+			$("#text_box").html(data2);
         });
 
     });
@@ -62,11 +64,7 @@ $(document).ready( function() {
     });
 	
 
-    $("#check").click( function(event) {
-        $.get('/twu/game/character_info/', {}, function(data){
-            $('#left_bar').html(data);
-        });
-    });
+
 
 	 $("#newmap").click( function(event) {
 		$.get('/twu/game/map_refresh/', {}, function(data){

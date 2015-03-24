@@ -37,8 +37,8 @@
 </tbody>
 </table>
 {% if user.is_authenticated %}
-<br><a href="{% url 'game'%}">  
-<img border="0"  align ="right" class="newmap" id ="newmap" src="{% static 'images/zombiehand.png' %}"></a>
+<br>  
+<img border="0"  align ="right" class="newmap" id ="newmap" src="{% static 'images/zombiehand.png' %}">
 {% else %}
 <br><a href="{% url 'auth_login'%}">  
 <img border="0"  align ="right" src="{% static 'images/zombiehand.png' %}"></a>
