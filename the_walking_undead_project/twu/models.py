@@ -18,7 +18,7 @@ from datetime import datetime, date
 class Score(models.Model):
     player = models.ForeignKey(User)
     score = models.IntegerField(default=0)
-    timestamp = models.DateTimeField(default=datetime.now, blank=True)
+    timestamp = models.DateField()
 
     def _unicode_(self):
         return self.score

@@ -9,30 +9,25 @@
 <tr>
 <td style="text-align: center">TOP 5 OF ALL TIME</td>
 <td style="text-align: center">   TOP 5 TODAY   </td>
-<td style="text-align: center"> TOP 5 THIS WEEK </td>
-<td style="text-align: center"> TOP 5 THIS MONTH</td>
 </tr>
 <td>{% if scores %}
-		<ul>
+		<ul><h4>
 			{% for score in scores %}
 			<li> {{score.player}}  {{score.score}}</li>
 			{% endfor %}
-		</ul>
+		</ul></h4>
 	{% else %}
 		<strong>There are no scores.</strong>
 	{% endif %}</td>
-<td>name1<br>
-name 2<br>
-name3</td>
-<td>name1<br>
-name 2<br>
-name3</td>
-<td>name1<br>
-name 2<br>
-name3</td>
-</tr>
-</tbody>
-</table>
+<td>{% if scores2 %}
+		<ul><h4>
+			{% for score in scores2 %}
+			<li> {{score.player}} Scored = {{score.score}}</li>
+			{% endfor %}
+		</ul></h4>
+	{% else %}
+		<strong>There are no scores.</strong>
+	{% endif %}</td></tbody></table>
 
 {% if user.is_authenticated %}
 <br><a href="{% url 'game'%}">  

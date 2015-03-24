@@ -75,8 +75,11 @@ def gameover(request):
 
 def scoreboard(request):
 # can be used to score if user registered/logged in
-    top5_today = Score.objects.order_by('-timestamp','-score')[:5]
-    context_dict = {'scores': top5_today}
+    top5_all_time = Score.objects.order_by('-score')[:5]
+    top5_today = Score.objects.order_by('-timestamp' , '-score')[:5]
+    context_dict = {}
+    context_dict['scores'] = top5_all_time
+    context_dict['scores2'] = top5_today
     return render(request, 'twu/scoreboard.html', context_dict)
 
 # Use the login_required() decorator to ensure only those logged in can access the view.
