@@ -15,14 +15,7 @@ function closeWin() {
     myWindow.close();
 }
 </script>
-<script language="Javascript">
 
-        function gameover(){
-            window.opener.location.href="http://127.0.0.1:8000/twu/scoreboard";
-            self.close();
-        }
-
-</script>
 <script>
 window.onload = function() {
     document.getElementById("scream.mp3").play();
@@ -37,9 +30,9 @@ window.onload = function() {
     </head>
 
     <body>
-	<h1>You have died. Check your score to see how you did.</h1>
+	<h1>You have died After scoring {{score}} </h1>
 	<br><br><br><br>
-	<text onclick="gameover()"><h4 style="text-align:center">Scoreboard</h4></button>
+	<a href="{% url 'scoreboard'%}"><h3>Scoreboard</h3></a>
 
 
 	<audio autoplay>

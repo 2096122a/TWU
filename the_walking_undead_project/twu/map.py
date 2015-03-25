@@ -32,6 +32,7 @@ class Map:
 
     def move_player(self,direction):
         size = len(self.matrix)
+	self.add_zombies()
         if direction == "up":
             if self.player_pos[0]>1 and self.get_current_tile().up:
                 self.player_pos[0]-=1
@@ -101,12 +102,11 @@ class Map:
                     self.player.switch_active()
             else:
                 
-                if damage >= self.player.melee_power:
+                if int(damage) >= int(self.player.melee_power):
                     self.kill_zombies(1)
                     
                     return "You killed 1 zombies."
                 else:
-                   
                     return "You missed!"
         else:
             return "There are no zombies here"
