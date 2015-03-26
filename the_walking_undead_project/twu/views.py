@@ -71,16 +71,18 @@ def howto4(request):
 
 @login_required
 def gameover(request):
-    f = open( "pickle.p", "wb")
-    f.write(request.session.get('field_map'))
-    f.close()
-    field_map = pickle.load(open( "pickle.p", "rb"))
+    context_dict = {}
+    if request.session.get('field_map'):
+        f = open( "pickle.p", "wb")
+        f.write(request.session.get('field_map'))
+        f.close()
+        field_map = pickle.load(open( "pickle.p", "rb"))
 
-    current_user = User.objects.get(username = request.user.get_username())
-    newScore= Score.objects.get_or_create(player=current_user,score=int(field_map.player.score),timestamp=datetime.now())
-    score = str(field_map.player.score)
-    context_dict = {'score' : score}
-    request.session['field_map'] = ""
+        current_user = User.objects.get(username = request.user.get_username())
+        newScore= Score.objects.get_or_create(player=current_user,score=int(field_map.player.score),timestamp=datetime.now())
+        score = str(field_map.player.score)
+        context_dict = {'score' : score}
+        request.session['field_map'] = ""
     return render(request, 'twu/gameover.html', context_dict)
 
 def scoreboard(request):
