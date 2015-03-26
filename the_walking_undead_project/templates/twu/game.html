@@ -5,16 +5,13 @@
 {% block top_block_left %}
 <br>
 <script>
+<!-- javascript to open a how to play page in a new window-->
 function howToPlay() {
     window.open("{% url 'howto3' %}", "_blank", "resizable=yes");
 }
-function showgameover(){
-            url = "gameover"
-            newwindow=window.open(url,'gameover','height=500,width=900');
-            if (window.focus) {newwindow.focus()}
-        }
 </script>
 <text onclick="howToPlay()"><h4>How To Play</h4></text><br><br>
+<!-- Plays the game music, by Jonathan Coulton, with a mute button-->
 <audio id="player" src="/static/brains.mp3" autoplay loop></audio>
 <div>
     <button style="background-color:transparent; color:white" onclick="document.getElementById('player').muted=!document.getElementById('player').muted"> Mute/Unmute </button>
@@ -25,7 +22,7 @@ function showgameover(){
 
 {% endblock %}
 
-
+<!-- side block with health, ammo and weapons. Updated by ajax calls to div id left_bar-->
 {% block side_blockl %}
 <br><br><br><br>
 <div id="left_bar">
@@ -39,6 +36,7 @@ function showgameover(){
 {% endblock %}
 {% block side_block %}
 <br><br><br><br>
+<!-- javascript to create dice roll gif, then hide it behind the result-->
 <script type = "text/javascript">
 
 function show() {
@@ -53,11 +51,14 @@ function hide() {
 }
 
 </script>
+<!-- dice roll images. Static files did nto work for updating these images, so a dynamic link used instead-->
 <div id = "myDiv" style="display:none"><img id = "myImage" style="width: 10vw; height: 10vw;" src = "{% static 'images/dice.gif' %}"></div><br>
+<!-- dice gif and update called by ajax using div id-->
 <div id="dice" class="move">
 <input type="image" style="width: 10vw; height: 10vw; display:block" alt="" src="../../static/images/dice5.png" class="dice" onclick="show()"><br>
 </div>
 <br><br><br><br>
+<!-- movement arrows. Spacer used to align arrows correctly, and ensure a blank space between them all-->
 <img style="width: 25%; height: 10%" alt="" src="{% static 'images/spacer.png' %}">
 <input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/up_arrow.png' %}" name="up" class="btTxt submit move" id="up">
 <br>
@@ -68,8 +69,7 @@ function hide() {
 <input type="image" style="width: 25%; height: 10%"  alt="" src="{% static 'images/down_arrow.png' %} " name="down" class="btTxt submit move" id="down">
 
 <br>
-<div id="test">
-</div>
+<!-- score updated by ajax-->
 Score :
 <div id="score_counter">
 0
@@ -77,6 +77,7 @@ Score :
 {% endblock %}
 
 {% block body_block %}
+<!-- dynamic map. calls all map images from mat matrix, and renders each tile individually. Again, static files did not work here.-->
 <div id="game_screen">
 {% if tiles %}
 	{% for row in tiles %}
@@ -90,6 +91,7 @@ Score :
 {% endif %}
 
 <br>
+<!-- text feedback,updated via ajax on movement and dice rolls-->
 <div id ="text_box" align="center">
 &lt;&lt;in game text feedback box&gt;&gt; <br>
 

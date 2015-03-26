@@ -2,27 +2,21 @@
 
 {% load staticfiles %}
 
+{% block title %}Game Over{% endblock %}
+
 {% block body_block %}
 <script>
+<!-- javascript to close window-->
 function closeWin() {
     myWindow.close();
 }
-</script>
-
-<script>
+<!-- javascript for on death audio-->
 window.onload = function() {
     document.getElementById("scream.mp3").play();
 }
 </script>
 
-<html>
-
-</head>
-    <head>
-        <title>Game Over...</title>
-    </head>
-
-    <body>
+<!-- shows score, from ajax call-->
 	<h1>You have died</h1><br> <h3> {{score}} </h3>
 	<br><br><br><br>
 	<a href="{% url 'scoreboard'%}"><h3>Scoreboard</h3></a>
@@ -36,7 +30,5 @@ window.onload = function() {
      			    src="http://www.google.com/reader/ui/3523697345-audio-player.swf"   
      				width="650? height="0? quality="best"></embed>
 	</audio>
-    </body>
 
-</html>
 {% endblock %}

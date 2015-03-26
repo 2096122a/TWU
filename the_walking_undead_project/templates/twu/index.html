@@ -10,6 +10,7 @@
 {% block body_block %}
 
 <h3>
+<!-- map menu. If user is logged in, they can click new game, else it is replaced with a link to log in to play-->
 {% if user.is_authenticated %}
 <h3 id="newmap">New Game</h3><br>
 

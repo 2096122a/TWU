@@ -2,12 +2,14 @@
 {% load staticfiles %}
 {% block title %}How To Play{% endblock %}
 {% block body_block %}
+<!-- script to close window on click-->
 <script>
 function closeWin() {
     myWindow.close();
 }
 
 </script>
+<!-- 2 column table, one column images, other column associated text-->
 <table style="text-align: left; width: 100%; height: 90%;" border="0" cellpadding="2" cellspacing="2">
 <br>
 <tbody>
@@ -41,6 +43,7 @@ function closeWin() {
 </tr>
 </tbody>
 </table>
+<!-- closes window so user is taken back to main page which this window had hidden. prevents to many windows being open-->
 <br> <a href="javascript: window.close()">
 <img onclick="closeWin()" border="0"  align ="right" src="{% static 'images/zombiehand.png' %}"></a>
  

@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block title %}How To Play{% endblock %}
 {% block body_block %}
-
+<!-- 2 column table, one column images, other column associated text-->
 <table style="text-align: left; width: 100%; height: 90%;" border="0" cellpadding="2" cellspacing="2">
 <br>
 <tbody>
@@ -20,6 +20,7 @@
 <td><br><br>
 <br>POINTS<br>
 <br>
+<!-- It's over 9000! (sad geeky joke)-->
 <p>    9001</p></td>
 <td>Here you can see your current score. As with most scores, the higher the better.</td>
 </tr>
@@ -32,10 +33,11 @@
 <img style="width: 15%; "  alt="" src="{% static 'images/right_arrow.png' %}"><br>
 <img style="width: 15%; " align="middle" alt="" src="{% static 'images/spacer.png' %}">
 <img style="width: 15%; "  alt="" src="{% static 'images/down_arrow.png' %}"></td>
-<td>Your Movement keys. Click to move to a new tile. You can also use the keyboard arrows, and the WASD keys.</td>
+<td>Your Movement keys. Click to move to a new tile. You can also use the WASD keys.</td>
 </tr>
 </tbody>
 </table>
+<!-- if logged in, takes you to play game, else to log in-->
 {% if user.is_authenticated %}
 <br>  
 <img border="0"  align ="right" class="newmap" id ="newmap" src="{% static 'images/zombiehand.png' %}">

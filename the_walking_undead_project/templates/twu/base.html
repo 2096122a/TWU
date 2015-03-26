@@ -30,12 +30,14 @@
 <span class="icon-bar"></span>
 </button>
 </div>
+<!-- top nav bar, where logo is-->
 <div class="navbar-collapse collapse">
 <ul class="nav navbar-nav navbar-left">
 {% block top_block_left %}
 {% endblock %}
 
 </ul>
+<!--top nav bar, right corner, shows log in or user name-->
 <ul class="nav navbar-nav navbar-right">
 {% block top_block_right %}
 {% if user.is_authenticated %}
@@ -49,6 +51,7 @@
 </ul>
 <br>
 <ul class="nav">
+<!-- logo-->
 <a href="{% url 'index' %}"><h3>The Walking Undead</h3></a>
 </ul>
 </div>
@@ -56,12 +59,13 @@
 </div>
 <div class="col-sm-3 col-md-2 sidebar">
 
-
+<!-- Right side bar, created in dashboard.css-->
 {% block side_blockl %}
 {% endblock %}
 </div>
 <div class="col-sm-3 col-md-2 sidebarright">
 
+<!-- existing left sidebar from Dashboard.css-->
 {% block side_block %}
 {% endblock %}
 </div>

@@ -4,6 +4,8 @@
 
 
 {% block body_block %}
+
+<!-- scorebaord, pulls data from database for todays top scores and all time top scores-->
 <table style="text-align: center; width: 100%; " border="5" cellpadding="0" cellspacing="0">
 <tbody>
 <tr>
@@ -31,9 +33,11 @@
 
 {% if user.is_authenticated %}
 <br> 
-<img style="width: 10%; height: 10%;" border="0"  class "newmap" id="newmap" align ="centre" src="{% static 'images/zombiehandtextKMZ.png' %}">
+
+<!-- link to new game if user logged in, else to log in to play. this can happen if scoreboard viewed from main menue-->
+<img style="width: 25%; height: 25%;" border="0"  class "newmap" id="newmap" align ="centre" src="{% static 'images/zombiehandtextKMZ.png' %}">
 {% else %}
 <br><a href="{% url 'auth_login'%}">  
-<img style="width: 10%; height: 10%;" border="0"  class ="newmap" id="newmap" align ="centre" src="{% static 'images/zombiehandtextKMZ.png' %}"></a>
+<img style="width: 25%; height: 25%;" border="0"  class ="newmap" id="newmap" align ="centre" src="{% static 'images/zombiehandtextKMZ.png' %}"></a>
 {% endif %}
 {% endblock %}
