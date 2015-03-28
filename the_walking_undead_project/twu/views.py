@@ -162,7 +162,6 @@ def player_attack(request):
     return render(request, 'twu/map.html', context_dict)
 
 
-
 @login_required
 def dice(request):
     if request.method == 'GET':
@@ -180,7 +179,7 @@ def get_score(request):
     return HttpResponse(field_map.player.score)
 
 
-
+@login_required
 def character_info(request):
     context_dict = {}
 
@@ -199,3 +198,6 @@ def character_info(request):
 
     return render(request, 'twu/leftbar.html', context_dict)
 
+
+def error_page(request):
+    return render(request, 'twu/error_page.html', {})

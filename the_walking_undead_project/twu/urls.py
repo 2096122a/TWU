@@ -15,5 +15,5 @@ urlpatterns = patterns('',
            url(r'^game/get_score/$', views.get_score, name='get_score'),
            url(r'^game/character_info/$', views.character_info, name='character_info'),
            url(r'^game/map_refresh/$', views.map_refresh, name='map_refresh'),
-		url(r'^game/player_attack/$', views.player_attack, name='player attack'),
+	   url(r'^game/player_attack/$', views.player_attack, name='player attack'),
         )
