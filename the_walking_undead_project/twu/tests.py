@@ -11,18 +11,9 @@ from django.db import models
 from django.contrib.auth.models import User
 
 """
-NOTE: We literally only have one model, Score, so instead of
-      3 redundant tests for models, we've done 1 test for Score
+NOTE: We literally only have one model, Score, so we have 3 tests on Score,
       and 5 for views.
 """
-
-
-def add_cat(player, score, timestamp):
-    user = User.objects.get(id=player)
-    c.score = score
-    c.timestamp = timestamp
-    c.save()
-    return c
 
 class ScoreModelTest(TestCase):
 
@@ -32,12 +23,41 @@ class ScoreModelTest(TestCase):
                 ensure_score_is_positive should assert True
                 for positive scores
         """
-        user = User.objects.get(id=player)
-        cat = Score(player=user, score=-1, timestamp="2015-01-01")
-        cat.save()
-        print 'views', cat.score
+        user = User(username="test")
+        user.save()
+        score = Score(player=user, score=-1, timestamp="2015-01-01")
+        score.save()
+        print 'Testing for positive score...'
 
-        self.assertEqual((cat.score >= 0), True)
+        self.assertEqual((score.score >= 0), True)
+
+    def test_ensure_default_score_is_zero(self):
+
+        """
+                ensure_default_score_is_zero should assert True
+                for newly instantiated scores
+        """
+        user = User(username="test")
+        user.save()
+        score = Score(player=user, timestamp="2015-01-01")
+        score.save()
+        print 'Testing for a new score...'
+
+        self.assertEqual(score.score, 0)
+
+    def test_ensure_date_is_stored_correctly(self):
+
+        """
+                ensure_date_is_stored_correctly should assert True
+                for scores with date
+        """
+        user = User(username="test")
+        user.save()
+        score = Score(player=user, score=10, timestamp="2015-01-01")
+        score.save()
+        print 'Testing for date...'
+
+        self.assertEqual(score.timestamp, "2015-01-01")
 
 
 class IndexViewTests(TestCase):
@@ -51,6 +71,7 @@ class IndexViewTests(TestCase):
         self.assertContains(response, "How To Play")
         self.assertContains(response, "Scoreboard")
         self.assertContains(response, "Log In To Play")
+        print "Testing for correct options on index view..."
 
 
 class Howto1ViewTests(TestCase):
@@ -64,6 +85,7 @@ class Howto1ViewTests(TestCase):
         self.assertContains(response, "These are your Life Points")
         self.assertContains(response, "Bullets are needed to use your gun.")
         self.assertContains(response, "Roll 2+ to hit")
+        print "Testing for correct info on the first how to play page..."
 
 
 class Howto2ViewTests(TestCase):
@@ -77,6 +99,7 @@ class Howto2ViewTests(TestCase):
         self.assertContains(response, "This is the map.")
         self.assertContains(response, "the map tile has not yet been explored")
         self.assertContains(response, "Here you can see your current score.")
+        print "Testing for correct info on the second how to play page..."
 
 
 class Howto3ViewTests(TestCase):
@@ -90,6 +113,7 @@ class Howto3ViewTests(TestCase):
         self.assertContains(response, "These are your Life Points")
         self.assertContains(response, "Bullets are needed to use your gun.")
         self.assertContains(response, "Roll 2+ to hit")
+        print "Testing for correct info on the third how to play page..."
 
 
 class Howto4ViewTests(TestCase):
@@ -103,4 +127,4 @@ class Howto4ViewTests(TestCase):
         self.assertContains(response, "This is the map.")
         self.assertContains(response, "the map tile has not yet been explored")
         self.assertContains(response, "Here you can see your current score.")
-
+        print "Testing for correct info on the fourth how to play page..."
