@@ -57,4 +57,4 @@ target/
 *.sqlite3
 
 #Pickled Files
-pickle.p
+*.p

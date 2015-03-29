@@ -150,7 +150,7 @@ def player_attack(request):
     
     zombie_killed = field_map.perform_attack(damage)
     damage_taken = field_map.hurt_player()
-    text_feedback = [  zombie_killed,
+    text_feedback = [ zombie_killed,
                       damage_taken,
                       field_map.tile_info()]
     context_dict["text_feedback"] = text_feedback
@@ -171,10 +171,10 @@ def dice(request):
 
 @login_required
 def get_score(request):
-    f = open( "pickle.p", "wb")
+    f = open( "pickle2.p", "wb")
     f.write(request.session.get('field_map'))
     f.close()
-    field_map = pickle.load(open( "pickle.p", "rb"))
+    field_map = pickle.load(open( "pickle2.p", "rb"))
 
     return HttpResponse(field_map.player.score)
 
@@ -183,10 +183,10 @@ def get_score(request):
 def character_info(request):
     context_dict = {}
 
-    f = open( "pickle.p", "wb")
+    f = open( "pickle3.p", "wb")
     f.write(request.session.get('field_map'))
     f.close()
-    field_map = pickle.load(open( "pickle.p", "rb"))
+    field_map = pickle.load(open( "pickle3.p", "rb"))
     
     context_dict["health"] = field_map.player.health
     context_dict["bullets"] = field_map.player.bullets
