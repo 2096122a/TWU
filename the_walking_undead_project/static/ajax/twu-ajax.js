@@ -50,7 +50,12 @@ $(document).ready( function() {
             $("#dice").html(data);
 	});
 	$.get('/twu/game/player_attack/', {damage : number}, function(data2){
-		$("#text_box").html(data2);
+		if (data2 == "1") {
+			location.href = ('/twu/game/gameover/')
+		} 
+		else {
+			$("#text_box").html(data2);
+		}
         });
 
     });

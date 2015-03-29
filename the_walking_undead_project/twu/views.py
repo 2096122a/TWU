@@ -122,7 +122,6 @@ def move(request):
         damage_taken = field_map.hurt_player()
     except:
         context_dict["error"] = "1"
-        print render(request, 'twu/empty.html', context_dict)
         return render(request, 'twu/empty.html', context_dict)
     if request.method == 'GET':
         direction = request.GET['direction']
@@ -149,7 +148,11 @@ def player_attack(request):
         damage = request.GET['damage']
     
     zombie_killed = field_map.perform_attack(damage)
-    damage_taken = field_map.hurt_player()
+    try:
+        damage_taken = field_map.hurt_player()
+    except:
+        context_dict["error"] = "1"
+        return render(request, 'twu/empty.html', context_dict)
     text_feedback = [ zombie_killed,
                       damage_taken,
                       field_map.tile_info()]
